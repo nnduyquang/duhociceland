@@ -1,0 +1,142 @@
+/* Sidebar
+-----------------------------------------------------------------------------------------*/
+.menusign {
+  display: block;
+  width: 10px;
+  line-height: .3;
+  font-size: 2em;
+  margin: .5em;
+}
+.menusign br {
+  height: 0;
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 9999999;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 260px;
+  background: white;
+  -webkit-transition: left 0.3s ease, -webkit-box-shadow 0.3s ease 0.2s;
+  transition: left 0.3s ease, box-shadow 0.3s ease 0.2s;
+  -webkit-box-shadow: 0.5em 0 0 0 $sub-color, 0.6em 0 0 0 $sub-color;
+  box-shadow: 0.5em 0 0 0 $sub-color, 0.6em 0 0 0 $sub-color;
+}
+.sidebar #close {
+  //float: right;
+  //margin: -5.5rem 1rem;
+  //font-size: 1.4em;
+  //color: #fa598d;
+  //text-align: right;
+}
+
+.sidebar.closed {
+  left: -260px;
+  -webkit-box-shadow: 0 0 0 #1ba8ff;
+  box-shadow: 0 0 0 #1ba8ff;
+}
+.sidebar h2 {
+  padding: .5em;
+  color: #1abc9c;
+}
+.sidebar ul {
+  padding: 0;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  margin: 0;
+}
+.sidebar ul li {
+  width: 90%;
+  margin: 5px 10px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: bolder;
+  text-align: left;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 3px 6px;
+  font-size: 16px;
+  line-height: 1.8;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #f3f3f3;
+}
+.sidebar .sidebar-sub-heading{
+  border-top: 1px solid #e0e0e0;
+  color: #757575;
+  display: block;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+.sidebar .sidebar-hotline{
+  font-size: 16px;
+  font-weight: bolder;
+  padding: 16px;
+  color: #757575;
+}
+.sidebar .sidebar-hotline .sidebar-number{
+  color: #1ba8ff;
+}
+.sidebar .icon-sidebar{
+  width: 56px;
+}
+.sidebar ul li a {
+  color: #757575;
+  text-decoration: none;
+}
+.sidebar ul li:hover {
+  //background: #17a689;
+  //border-color: #17a689;
+
+}
+.sidebar .background-sidebar{
+  background-image: url(../images/logo/logo_footer.png);
+  height: calc(56px*4);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-color: white;
+}
+.footer a {
+  color: #17a689;
+}
+
+/* Blurred class
+
+This class is added to the container
+(#blurMe) when the sidebar is open.
+-----------------------------------*/
+.blurred {
+  transition: all 0.6s ease;
+  filter: blur(10px);
+}
+
+/* Logo effect
+-----------------------------*/
+@-webkit-keyframes blur {
+  66% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    -webkit-filter: url(#blurLogo);
+    filter: url(#blurLogo);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
+  }
+}
+@keyframes blur {
+  66% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    -webkit-filter: url(#blurLogo);
+    filter: url(#blurLogo);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
+  }
+}

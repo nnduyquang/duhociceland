@@ -1,0 +1,1 @@
+@extends('backend.admin.master')@section('title-page')Dashboard@stop@section('container')@stop

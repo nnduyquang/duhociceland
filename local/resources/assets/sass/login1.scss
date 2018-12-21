@@ -1,0 +1,139 @@
+@import url(http://fonts.googleapis.com/css?family=Vibur);
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: arial;
+}
+
+body#login {
+  background: #FF9000;
+  background: url('../images/temps/login_background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body#login h1 {
+  color: #ccc;
+  text-align: center;
+  font-family: 'Vibur', cursive;
+  font-size: 50px;
+}
+
+body#login .login-form {
+  width: 350px;
+  padding: 40px 30px;
+  background: white;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+body#login .form-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+body#login{
+  input{
+    border: none;
+  }
+}
+
+body#login .form-control {
+  width: 100%;
+  height: 50px;
+  border: none;
+  //padding: 5px 7px 5px 15px;
+  background: #fff;
+  color: #666;
+  border-bottom: 0.5px solid #1f45a8;
+  //border-radius: 4px;
+}
+body#login .form-control:focus {
+  border-bottom: 0.5px solid #1f45a8;
+  outline: none;
+}
+
+//body#login .form-control:focus, body#login .form-control:focus + .fa {
+//  border-color: #10CE88;
+//  color: #10CE88;
+//}
+
+body#login .form-group .fa {
+  position: absolute;
+  right: 15px;
+  top: 17px;
+  color: #999;
+}
+
+body#login .log-status.wrong-entry {
+  -webkit-animation: wrong-log 0.3s;
+  animation: wrong-log 0.3s;
+}
+
+body#login .log-status.wrong-entry .form-control, body#login .wrong-entry .form-control + .fa {
+  border-color: #ed1c24;
+  color: #ed1c24;
+}
+
+body#login .log-btn {
+  background: #1f45a8;
+  dispaly: inline-block;
+  width: 100%;
+  font-size: 16px;
+  height: 50px;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+body#login .link {
+  text-decoration: none;
+  color: #C6C6C6;
+  float: right;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+body#login .link:hover {
+  text-decoration: underline;
+  color: #8C918F;
+}
+
+body#login .alert {
+  display: none;
+  font-size: 12px;
+  color: #f00;
+  float: left;
+}
+
+@-webkit-keyframes wrong-log {
+  0%, 100% {
+    left: 0px;
+  }
+  20%, 60% {
+    left: 15px;
+  }
+  40%, 80% {
+    left: -15px;
+  }
+}
+
+@keyframes wrong-log {
+  0%, 100% {
+    left: 0px;
+  }
+  20%, 60% {
+    left: 15px;
+  }
+  40%, 80% {
+    left: -15px;
+  }
+}

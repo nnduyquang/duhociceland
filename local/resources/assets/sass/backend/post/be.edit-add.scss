@@ -1,0 +1,21 @@
+.wrap-create-edit{
+  box-shadow: 0 0 35px rgba(0, 0, 0, .1);
+  background-color: white;
+  margin-bottom: 30px;
+  .form-group{
+    padding: 15px;
+  }
+}
+.delete-input{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  span{
+    background-color: red;
+    color: white;
+    display: block;
+    padding: 5px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+}

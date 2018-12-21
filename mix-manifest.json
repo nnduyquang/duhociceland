@@ -1,0 +1,15 @@
+{
+    "/ss/frontend.css": "/ss/frontend.css",
+    "/ss/backend.css": "/ss/backend.css",
+    "/s/core.common.js": "/s/core.common.js",
+    "/ss/core.common.css": "/ss/core.common.css",
+    "/s/core.frontend.js": "/s/core.frontend.js",
+    "/s/core.backend.js": "/s/core.backend.js",
+    "/ss/core.frontend.css": "/ss/core.frontend.css",
+    "/ss/core.backend.css": "/ss/core.backend.css",
+    "/s/scripts.js": "/s/scripts.js",
+    "/ss/login.css": "/ss/login.css",
+    "/s/login.js": "/s/login.js",
+    "/s/ulti.js": "/s/ulti.js",
+    "/s/backend.js": "/s/backend.js"
+}
