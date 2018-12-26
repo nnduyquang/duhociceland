@@ -5,7 +5,7 @@
                 <div class="row">
                     @for ($i = 0; $i < 8; $i++)
                         <div class="col-md-6 p-2">
-                            <a href="">
+                            <a href="{{URL::asset('details.html')}}">
                                 <div class="border items">
                                     <div style="overflow: hidden">
                                         <div class="bg-cover"
@@ -20,13 +20,13 @@
                                         </ul>
                                     </div>
                                     <div class="p-2">
-                                        <h4><a href="">Digital Art & 3D Model – a future for film company</a></h4>
+                                        <h4><a href="{{URL::asset('details.html')}}">Digital Art & 3D Model – a future for film company</a></h4>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam eum
                                             molestiae
                                             fuga inventore maiores officia quae sint voluptatem?</p>
                                     </div>
                                     <div class="p-2 text-right mt-3 mb-3">
-                                        <a class="read-more" href="">Read more <i
+                                        <a class="read-more" href="{{URL::asset('details.html')}}">Read more <i
                                                     class="fas fa-long-arrow-alt-right"></i></a>
                                     </div>
                                 </div>

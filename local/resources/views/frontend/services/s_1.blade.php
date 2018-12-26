@@ -20,7 +20,7 @@
                              style="background-image:url({{URL::asset('http://demo9.cmsmart.net/edusite_1/wp-content/uploads/2016/11/edusite-class-320x287.jpg')}});">
                         </div>
                         <div class="p-3 info">
-                            <h4><a href="">Citizenship Application</a></h4>
+                            <h4><a href="{{URL::asset('/service-details.html')}}">Citizenship Application</a></h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur dicta.</p>
                         </div>
                         <div class="footer p-3 d-flex justify-content-between">
@@ -32,7 +32,7 @@
                                 <i class="far fa-star"></i>
                             </div>
                             <div class="">
-                                <a href="">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+                                <a href="{{URL::asset('/service-details.html')}}">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                     </div>
