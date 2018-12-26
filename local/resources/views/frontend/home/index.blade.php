@@ -29,5 +29,3 @@
     @include('frontend.home.h_5')
     @include('frontend.common.scub-email')
 @stop
-@section('jv-scripts')
-@stop

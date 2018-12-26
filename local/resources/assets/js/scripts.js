@@ -21,6 +21,8 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 
 $(document).ready(function () {
+
+
     function sidebar() {
         var trigger = $('#trigger,#close');
         trigger.on('click', function () {
@@ -52,31 +54,6 @@ $(document).ready(function () {
         runSlider();
     }
 
-    $('#owl-project').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: false,
-        dots: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            }
-        }
-    });
-
-    var owl = $('#owl-project');
-    $('.btn_next').click(function () {
-        owl.trigger('next.owl.carousel');
-    })
-    $('.btn_pre').click(function () {
-        owl.trigger('prev.owl.carousel', [300]);
-    })
 
 
 });
