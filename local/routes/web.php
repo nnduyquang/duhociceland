@@ -4,6 +4,35 @@
 Route::get('/', function () {
     return view('frontend.home.index');
 });
+
+Route::get('/contact.html', function () {
+    return view('frontend.contact.index');
+});
+
+Route::get('/aboutus.html', function () {
+    return view('frontend.about-us.index');
+});
+
+Route::get('/gallery.html', function () {
+    return view('frontend.gallery.index');
+});
+
+Route::get('/services.html', function () {
+    return view('frontend.services.index');
+});
+
+Route::get('/details.html', function () {
+    return view('frontend.blog-details.index');
+});
+
+Route::get('/service-details.html', function () {
+    return view('frontend.service-detail.index');
+});
+
+Route::get('/blogs.html', function () {
+    return view('frontend.blogs.index');
+});
+
 Route::post('/tim-kiem','FrontendController@getSearch')->name('search');
 
 

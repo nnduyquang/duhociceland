@@ -1,0 +1,31 @@
+#banner-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  h4 {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-flex;
+      a {
+        //text-transform: uppercase;
+        color: white;
+        position: relative;
+      }
+      &:not(:last-child) {
+        a {
+          padding-right: 10px;
+          &:after {
+            position: absolute;
+            content: '/';
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}

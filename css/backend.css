@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Arimo|Vollkorn+SC);@charset "UTF-8";
 @font-face {
   font-family: UTMAVO;
   src: url("../fonts/utm-avo.ttf");
@@ -18,7 +18,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1;
-  font-family: UTMAVO !important;
+  font-family: "Arimo", sans-serif !important;
 }
 
 blockquote, q {
@@ -57,6 +57,13 @@ img {
   padding: 0;
   background-color: inherit;
   border: none;
+}
+
+.bg-cover {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .show-image {
@@ -137,6 +144,25 @@ img {
 
 #ulti-bar .ulti-edit ul.ulti-head:hover li ul.ulti-head-dropdown li:hover a {
   color: green;
+}
+
+.text-title-left {
+  color: #37474f;
+  padding: 20px 30px 20px 15px;
+  font-size: 18px;
+  display: block;
+}
+
+.text-title-right {
+  padding: 20px 30px 20px 15px;
+  background-color: #F2A654;
+  width: 100%;
+  display: block;
+  color: white;
+}
+
+.cke_reset {
+  border: none !important;
 }
 
 #seo-part h3 {
@@ -538,3 +564,126 @@ img {
 }
 
 /********** END NESTABLE CSS **********/
+#config-text .nav-tabs--vertical {
+  border-bottom: none;
+  border-right: 1px solid #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+#config-text .nav-tabs--left {
+  margin: 0 15px;
+}
+
+#config-text .nav-tabs--left .nav-item + .nav-item {
+  margin-top: .25rem;
+}
+
+#config-text .nav-tabs--left .nav-link {
+  -webkit-transition: border-color .125s ease-in;
+  transition: border-color .125s ease-in;
+  white-space: nowrap;
+}
+
+#config-text .nav-tabs--left .nav-link:hover {
+  background-color: #f7f7f7;
+  border-color: transparent;
+}
+
+#config-text .nav-tabs--left .nav-link.active {
+  border-bottom-color: #ddd;
+  border-right-color: #fff;
+  border-bottom-left-radius: 0.25rem;
+  border-top-right-radius: 0;
+  margin-right: -1px;
+}
+
+#config-text .nav-tabs--left .nav-link.active:hover {
+  background-color: #fff;
+  border-color: #0275d8 #fff #0275d8 #0275d8;
+}
+
+.title-header h2 {
+  display: inline-block;
+  font-size: 18px;
+  height: 100px;
+  line-height: 43px;
+  margin-top: 3px;
+  padding-top: 28px;
+  color: #555;
+  position: relative;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.title-header a {
+  background: #2ecc71;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  opacity: .9;
+}
+
+.wrap-index {
+  -webkit-box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+
+.wrap-index form#formSearchPost {
+  padding: 30px 0;
+}
+
+.wrap-index form#formSearchPost button#btnSearchPost {
+  margin-left: 10px;
+}
+
+.wrap-index table td a.edit-button {
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #22A7F0;
+}
+
+.wrap-index table td input.delete-button {
+  background-color: #FA2A00;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.wrap-create-edit {
+  -webkit-box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.wrap-create-edit .form-group {
+  padding: 15px;
+}
+
+.delete-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.delete-input span {
+  background-color: red;
+  color: white;
+  display: block;
+  padding: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}

@@ -1,0 +1,82 @@
+#scub-email {
+  padding-top: 30px;
+  .email {
+    position: relative;
+    width: 68%;
+    height: auto;
+    margin: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .content {
+      width: 60%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      p {
+        line-height: 20px;
+        font-size: 15px;
+      }
+      .input-email {
+        border-radius: 20px;
+        border: 1px solid #6f6f6f;
+        background-color: #fff;
+        padding: 0px 3px;
+        input {
+          width: 80%;
+          border: none;
+          margin-left: 20px;
+          &:focus {
+            outline: none;
+          }
+        }
+        button {
+          padding: 8px 12px;
+          border: none;
+          background-color: #004085;
+          color: white;
+          cursor: pointer;
+          margin: 3px 1px;
+          border-radius: 18px;
+          font-size: 14px;
+          i {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  #scub-email {
+    .email {
+      width: 100%;
+      img {
+        //height: 120%!important;
+      }
+      .content {
+        width: 70%;
+        .input-email{
+          border: none;
+          input{
+            width: 100%;
+            margin: auto;
+            padding: 8px 12px;
+            border-radius: 18px;
+            border: 1px solid #6f6f6f;
+            margin-bottom: 6px;
+          }
+          button{
+            width: fit-content;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}

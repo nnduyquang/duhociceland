@@ -1,0 +1,48 @@
+.slider{
+  .img-content{
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding-top: 38px;
+    overflow: hidden;
+  }
+  h5{
+    font-family: 'Vollkorn SC', serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  h4{
+
+    font-family: 'Vollkorn SC', serif;
+    width: fit-content;
+    margin:25px auto 20px auto ;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  h6{
+    width: 60%;
+    font-size: 17px;
+    margin: auto;
+    color: #6b6a6a;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  .slider{
+    h5{
+      font-size: 22px;
+    }
+    h4{
+      font-size: 26px;
+    }
+    h6{
+      width: 90%;
+    }
+  }
+}

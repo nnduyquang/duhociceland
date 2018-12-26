@@ -1,0 +1,82 @@
+#right-bar {
+  h6 {
+    margin-top: 8px;
+    background-color: #004085;
+    color: white;
+    font-weight: bold;
+    padding: 10px 12px;
+    border-radius: 3px;
+  }
+  .services {
+    list-style-type: none;
+    padding: 10px;
+    li {
+      padding: 10px 0px;
+      a {
+        width: 100%;
+        color: #1b1e21;
+        transition: .6s;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &:hover {
+          color: #0062cc;
+        }
+      }
+    }
+  }
+
+  .search-bar {
+    border: 1px solid #6f6f6f;
+    border-radius: 3px;
+    input {
+      width: 80%;
+      border: none;
+      padding: 0px 12px;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      width: 43px;
+      height: 43px;
+      text-align: center;
+      line-height: 43px;
+      border: none;
+      background-color: #0062cc;
+      color: white;
+    }
+  }
+
+  .tags {
+    float: left;
+    padding: 8px 10px;
+    background-color: #0062cc;
+    margin-top: 6px;
+    margin-right: 6px ;
+    border-radius: 3px;
+    a {
+      color: white;
+      font-size: 13px;
+    }
+  }
+
+  .sc-nw {
+
+    i {
+      width: 43px;
+      height: 43px;
+      background-color: #0062cc;
+      text-align: center;
+      line-height: 43px;
+      color: white;
+      border-right: 1px solid white;
+    }
+    span {
+      padding-left: 10px;
+      font-size: 14px;
+      color: white;
+    }
+  }
+}

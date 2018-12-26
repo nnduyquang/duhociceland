@@ -1,0 +1,44 @@
+#h_2 {
+  overflow-x: hidden;
+  h5 {
+    font-weight: bold;
+    width: fit-content;
+    margin: 13px auto;
+    font-size: 26px;
+  }
+  h6 {
+    font-weight: bold;
+    font-size: 19px;
+    padding-bottom: 10px;
+  }
+  p.info {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    line-height: 20px;
+  }
+  .wcu-item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .border {
+    //background-color: #1b1e21;
+    width: 68px;
+    height: 68px;
+    text-align: center;
+    border-radius: 50%;
+    img {
+      width: 38%;
+      margin-top: 30%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #h_2 {
+    p.info {
+      width: 100%;
+    }
+  }
+}

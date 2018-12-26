@@ -1,0 +1,93 @@
+#footer{
+ .top{
+   padding-top: 30px;
+   padding-bottom: 30px;
+   background-position: center center;
+   -webkit-background-size: cover;
+   background-size: cover;
+   background-repeat: no-repeat;
+   min-height: 100px;
+   h4{
+     color: white;
+     font-size: 19px;
+     font-weight: bold;
+     font-family: 'Vollkorn SC', serif;
+   }
+   .footer-logo{
+     width: 70px;
+     height: auto;
+   }
+   .img-ser{
+     width: 100px;
+     height: 68px;
+     background-position: center center;
+     background-repeat: no-repeat;
+     -webkit-background-size: cover;
+     background-size: cover;
+     margin-right: 10px;
+   }
+   .img-gallery{
+     width: 100%;
+     height: 68px;
+     background-position: center center;
+     background-repeat: no-repeat;
+     -webkit-background-size: cover;
+     background-size: cover;
+   }
+   p{
+     font-size: 14px;
+     line-height: 18px;
+     color: white;
+   }
+   ul{
+     padding-top: 20px;
+     list-style-type: none;
+     li{
+       margin-bottom: 10px;
+       min-height: 20px;
+       a{
+         font-size: 14px;
+         color: white;
+         font-weight: bold;
+       }
+       i{
+         min-width: 35px;
+         color: white;
+         font-size: 18px;
+       }
+       .sc-nw{
+         i{
+           width: 36px;
+           height: 36px;
+           text-align: center;
+           line-height: 36px;
+           border-radius: 50%;
+           background-color: #fff;
+           color: #6f6f6f;
+           transition: .6s;
+           &:hover{
+             background-color: #007bff;
+             color:white;
+           }
+         }
+       }
+     }
+   }
+   .blog{
+     ul{
+       li:not(:last-child){
+         border-bottom: 1px solid #eaeaea;
+       }
+     }
+   }
+ }
+  .bottom{
+    background-color: black;
+    p{
+      padding-top: 38px;
+      padding-bottom: 38px;
+      font-size: 14px;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+#au_1{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  h3{
+    font-size: 36px;
+    font-family: 'Vollkorn SC', serif;
+    width: fit-content;
+    margin: auto;
+    font-weight: bold;
+    padding-bottom: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    &:after{
+      position: absolute;
+      content: '';
+      width: 68px;
+      height: 3px;
+      background-color: #1b1e21;
+      top:100%;
+      left: 50%;
+      transform: translateX(-50%) skew(45deg);
+    }
+  }
+  p{
+    font-size: 15px;
+    color: #6f6f6f;
+  }
+  img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  h5{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Vollkorn SC', serif;
+  }
+  ul{
+    margin-left: 20px;
+  }
+}
