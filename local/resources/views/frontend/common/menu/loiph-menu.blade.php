@@ -52,10 +52,10 @@
             </ul>
         </div>
         <div class="container mobile-menu d-lg-none d-md-none d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center" id="m-menu">
             <i class="fas fa-bars pt-2 pb-2 pr-2"></i> <span>MENU</span>
             </div>
-            <i class="fas fa-search"></i>
+            {{--<i class="fas fa-search" id="m-search"></i>--}}
         </div>
     </div>
 </div>

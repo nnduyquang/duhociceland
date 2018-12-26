@@ -9,12 +9,13 @@
     <meta name="keywords" content="@yield('keyword')">
     <meta name="description" content="@yield('description')">
     <meta name="viewport" content="width=device-width">
-    <meta property="og:title" content="@yield('title')" />
+    <meta property="og:title" content="@yield('title')"/>
     {{--<meta property="og:type" content="article" />--}}
-    <meta property="og:url" content="@yield('url-og')" />
-    <meta property="og:image" content="@yield('image-og')" />
-    <meta property="og:description" content="@yield('description')" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <meta property="og:url" content="@yield('url-og')"/>
+    <meta property="og:image" content="@yield('image-og')"/>
+    <meta property="og:description" content="@yield('description')"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="shortcut icon" href="{{URL::asset('images/icon/favicon.ico')}}" type="image/x-icon">
     <link rel="icon" href="{{URL::asset('images/icon/favicon.ico')}}" type="image/x-icon">
     {{--<meta property="og:site_name" content="Site Name, i.e. Moz" />--}}
@@ -31,6 +32,7 @@
 <div id="blurrMe">
     {{--@include('frontend.common.menu.m-menu')--}}
     @include('frontend.common.menu.loiph-menu')
+    @include('frontend.common.menu.loiph-m-menu')
     @yield('slider')
     @yield('container')
 </div>
@@ -48,6 +50,17 @@
         }
     });
     new WOW().init();
+    $('#m-search').click(function () {
+
+    })
+    $('#m-menu').click(function () {
+        var $con = $('.menu-content').css('height');
+        if ($con == '0px') {
+            $('.menu-content').css({'height': 'auto', 'opacity': '1','top':'100%'});
+        } else {
+            $('.menu-content').css({'height': '0px', 'opacity': '0','top':'-100%'});
+        }
+    })
     $('#owl-project').owlCarousel({
         loop: true,
         margin: 10,

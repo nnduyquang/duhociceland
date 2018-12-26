@@ -756,6 +756,77 @@ This class is added to the container
   font-weight: bold;
 }
 
+#loiph-m-menu {
+  width: 100% !important;
+  position: relative;
+  z-index: 100;
+}
+
+#loiph-m-menu .search-box {
+  margin: 16px 0px;
+  border: 2px solid #6f6f6f;
+  background-color: #eae8e8;
+}
+
+#loiph-m-menu .search-box input {
+  background-color: #eae8e8;
+  border: none;
+  width: calc(100% - 38px);
+  padding: 10px 14px;
+}
+
+#loiph-m-menu .search-box input:focus {
+  outline: none;
+  background-color: white;
+}
+
+#loiph-m-menu .search-box button {
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  line-height: 38px;
+  background-color: transparent;
+  border: none;
+  border-left: 2px solid #6f6f6f;
+}
+
+#loiph-m-menu .search-box button i {
+  font-size: 18px;
+}
+
+#loiph-m-menu .menu-content {
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  height: 0px;
+  opacity: 0;
+  top: -100%;
+  list-style-type: none;
+  padding: 0px 8px;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+#loiph-m-menu .menu-content li {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 14px;
+}
+
+#loiph-m-menu .menu-content li:not(:last-child) {
+  border-bottom: 1px solid #6f6f6f;
+}
+
+#loiph-m-menu .menu-content li a {
+  color: #1b1e21;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+#loiph-m-menu .menu-content li a:hover {
+  color: #0062cc;
+}
+
 .slider .img-content {
   background-position: center center;
   background-size: cover;
