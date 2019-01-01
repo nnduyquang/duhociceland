@@ -21,8 +21,11 @@ class CategoryItemController extends Controller
      */
     public function index(Request $request, $type)
     {
-        $categoryItems = $this->categoryItemRepository->getAllCategoryItem($type);
-        return view('backend.admin.' . $type . '.index', compact('categoryItems'))->with('i', ($request->input('page', 1) - 1));
+        $data = $this->categoryItemRepository->getAllCategoryItem($type);
+        $categoryItems = $data['categoryItems'];
+        $locales = $data['locales'];
+//        $categoryItems = $this->categoryItemRepository->getAllCategoryItem($type);
+        return view('backend.admin.' . $type . '.index', compact('categoryItems','locales'))->with('i', ($request->input('page', 1) - 1));
     }
 
     /**
@@ -33,7 +36,16 @@ class CategoryItemController extends Controller
     public function create($type)
     {
         $data = $this->categoryItemRepository->showCreateCategoryItem($type);
-        return view('backend.admin.' . $type . '.create', compact('roles', 'data'));
+        $locales=$data['locales'];
+        $categoryItems=$data['categoryItems'];
+        return view('backend.admin.' . $type . '.create', compact('roles', 'locales','categoryItems'));
+    }
+    public function createLocale($translation_id, $locale_id,$type)
+    {
+        $data = $this->categoryItemRepository->showCreateLangCategoryItem($translation_id, $locale_id,$type);
+        $categoryItems=$data['categoryItems'];
+        $langLocale = $data['lang'];
+        return view('backend.admin.' . $type . '.create', compact('roles','categoryItems', 'langLocale', 'translation_id', 'locale_id'));
     }
 
     /**
@@ -47,6 +59,11 @@ class CategoryItemController extends Controller
         $data = $this->categoryItemRepository->createNewCategoryItem($request,$type);
         return redirect()->route($type.'.index');
     }
+    public function storeLocale(Request $request,$type){
+        $data = $this->categoryItemRepository->createNewCategoryItemLocale($request,$type);
+        return redirect()->route($type.'.index');
+    }
+
 
     /**
      * Display the specified resource.
@@ -70,7 +87,9 @@ class CategoryItemController extends Controller
         $data=$this->categoryItemRepository->showEditCategoryItem($id,$type);
         $categoryItem=$data['categoryItem'];
         $categoryItems=$data['categoryItems'];
-        return view('backend.admin.'.$type.'.edit', compact('categoryItem','categoryItems'));
+        $locales = $data['locales'];
+        $translation=$data['translation'];
+        return view('backend.admin.'.$type.'.edit', compact('categoryItem','categoryItems','locales','translation'));
     }
 
     /**

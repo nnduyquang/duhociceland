@@ -7,6 +7,14 @@ interface FrontendRepositoryInterface
 
     public function getFrontend();
 
+    public function getContact();
+
+    public function getAboutUs();
+
+    public function getBlogs();
+
+    public function getServices();
+
     public function getFrontendCommon();
 
     public function getAllMenuFrontend();

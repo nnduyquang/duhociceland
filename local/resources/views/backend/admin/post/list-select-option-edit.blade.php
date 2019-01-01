@@ -2,7 +2,7 @@
     $arrayCategoryItem=$post->categoryitems(CATEGORY_POST)->get();
 @endphp
 @foreach($categoryPost as $key=>$item)
-    <label class="check-container">
+    <label class="check-container" @if(isset($style))style="{{$style}}" @endif>
         {{$item->name}}
         @if(in_array($item->id,explode(',',$arrayCategoryItem->implode('id',','))))
             {{ Form::checkbox('list_category_id[]', $item->id, true, array('class' => '')) }}
@@ -13,6 +13,9 @@
         @endif
     </label>
     @if(!$item->children->isEmpty())
-        @include('backend.admin.post.list-select-option-edit', ['categoryPost' => $item->children])
+        @php
+            $px=($item->level+2)*40;
+        @endphp
+        @include('backend.admin.post.list-select-option-edit', ['categoryPost' => $item->children,'style'=>'padding-left:'.$px.'px'])
     @endif
 @endforeach

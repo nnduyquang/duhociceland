@@ -22,12 +22,15 @@
         <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/post') }}" href="{{ route('post.index') }}"><i class="fa fa-link"></i>
                 <p>Bài Viết</p></a>
         </li>
-        <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/danh-muc-san-pham') }}" href="{{ route('categoryproduct.index') }}"><i class="fa fa-link"></i>
-                <p>Chuyên Mục Sản Phẩm</p></a>
+        <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/ngon-ngu') }}" href="{{ route('locale.index') }}"><i class="fa fa-link"></i>
+                <p>Ngôn Ngữ</p></a>
         </li>
-        <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/san-pham') }}" href="{{ route('product.index') }}"><i class="fa fa-link"></i>
-                <p>Sản Phẩm</p></a>
-        </li>
+        {{--<li class="nav-item"><a class="nav-link {{ set_active('sml_admin/danh-muc-san-pham') }}" href="{{ route('categoryproduct.index') }}"><i class="fa fa-link"></i>--}}
+                {{--<p>Chuyên Mục Sản Phẩm</p></a>--}}
+        {{--</li>--}}
+        {{--<li class="nav-item"><a class="nav-link {{ set_active('sml_admin/san-pham') }}" href="{{ route('product.index') }}"><i class="fa fa-link"></i>--}}
+                {{--<p>Sản Phẩm</p></a>--}}
+        {{--</li>--}}
         <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/menu') }}" href="{{ route('menu.index') }}"><i class="fa fa-link"></i>
                 <p>Menu Builder</p></a>
         </li>

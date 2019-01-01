@@ -714,6 +714,7 @@ This class is added to the container
           box-sizing: border-box;
   border-bottom: 2px solid white;
   border-top: 2px solid white;
+  text-transform: uppercase;
 }
 
 #loiph-menu .main-menu ul li a:hover {
@@ -1070,6 +1071,7 @@ This class is added to the container
 #h_2 .wcu-item {
   padding-top: 20px;
   padding-bottom: 20px;
+  float: right;
 }
 
 #h_2 .border {

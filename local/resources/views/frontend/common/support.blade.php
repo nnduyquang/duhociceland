@@ -6,7 +6,7 @@
                 <p>We are provide 24/7 hours to support</p>
             </div>
             <div class="">
-                <button>GET SUPPORT <i class="pl-2 fas fa-long-arrow-alt-right"></i></button>
+                <button><a href="{{URL::to('contact.html')}}">GET SUPPORT <i class="pl-2 fas fa-long-arrow-alt-right"></i></a></button>
             </div>
         </div>
     </div>

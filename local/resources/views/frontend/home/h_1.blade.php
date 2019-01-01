@@ -1,56 +1,65 @@
 <div class="container-fluid" id="h_1">
     <div class="container" id="top">
         <div class="row">
+            @php
+                $count=0;
+            @endphp
+            @foreach($data['homeTop'] as $key=>$item)
+                @if($count==0)
             <div class="col-md-4 p-0">
                 <div class="box left">
-                    <img src="{{URL::asset('images/icon/icon1.png')}}" alt="">
-                    <h5>NEW PROGRAMMS</h5>
-                    <p>Donec consequat elit eget
-                        dui dignissim ultrices. Aliquam
-                        ut aliquam eros, eu porta eros.</p>
+                    <img src="{{URL::to($item->image)}}" alt="">
+                    <h5>{{$item->title}}</h5>
+                    <p>{{$item->description}}</p>
                 </div>
             </div>
+                @endif
+                @if($count==1)
             <div class="col-md-4 p-0">
                 <div class="box middle">
-                    <img src="{{URL::asset('images/icon/icon2.png')}}" alt="">
-                    <h5>EXPERT TEACHERS</h5>
-                    <p>Donec consequat elit eget
-                        dui dignissim ultrices. Aliquam
-                        ut aliquam eros, eu porta eros.</p>
+                    <img src="{{URL::to($item->image)}}" alt="">
+                    <h5>{{$item->title}}</h5>
+                    <p>{{$item->description}}</p>
                 </div>
             </div>
+                @endif
+                @if($count==2)
             <div class="col-md-4 p-0">
                 <div class="box right">
-                    <img src="{{URL::asset('images/icon/icon3.png')}}" alt="">
-                    <h5>EDUCATION SYSTEM</h5>
-                    <p>Donec consequat elit eget
-                        dui dignissim ultrices. Aliquam
-                        ut aliquam eros, eu porta eros.</p>
+                    <img src="{{URL::to($item->image)}}" alt="">
+                    <h5>{{$item->title}}</h5>
+                    <p>{{$item->description}}</p>
                 </div>
             </div>
+                @endif
+                @php
+                    $count++;
+                @endphp
+            @endforeach
         </div>
     </div>
 
     <div class="container" id="welcome">
         <div class="row">
             <div class="col-md-8 wow fadeInLeft">
-                <h5>WELCOME TO <span style="color: #007bff">SEAA</span></h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Quos dolo rem consequ untur, natus
-                    laudantium commodi earum aliquid in ullam.
+                <h5>{{$data['homeCategoryIntroduceTitle']->name}}</h5>
+                <p>{{$data['homeCategoryIntroduceTitle']->description}}
                 </p>
                 <div class="row mt-3">
+                    @foreach($data['homePostIntroduceCategory'] as $key=>$item)
                     <div class="col-md-6">
-                        <img src="http://thememascot.net/demo/personal/m/learnpress/v2.0/demo/images/about/7.jpg" alt="">
-                        <h6>Graduation  <span>Degree</span></h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, magnam dolore tempore.</p>
+                        <img src="{{URL::to($item->image)}}" alt="">
+                        <h6>{{$item->title}}</h6>
+                        <p>{{$item->description}}</p>
                         <button class="read-more">Read more</button>
                     </div>
-                    <div class="col-md-6">
-                        <img src="http://thememascot.net/demo/personal/m/learnpress/v2.0/demo/images/about/8.jpg" alt="">
-                        <h6>Online <span>Learning</span></h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, magnam dolore tempore.</p>
-                        <button class="read-more">Read more</button>
-                    </div>
+                    @endforeach
+                    {{--<div class="col-md-6">--}}
+                        {{--<img src="http://thememascot.net/demo/personal/m/learnpress/v2.0/demo/images/about/8.jpg" alt="">--}}
+                        {{--<h6>Online <span>Learning</span></h6>--}}
+                        {{--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, magnam dolore tempore.</p>--}}
+                        {{--<button class="read-more">Read more</button>--}}
+                    {{--</div>--}}
                 </div>
             </div>
             <div class="col-md-4  wow fadeInRight">

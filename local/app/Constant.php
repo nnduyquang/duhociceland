@@ -16,6 +16,8 @@ define("CATEGORY_PRODUCT_CAP_3",3);
 
 define("CATEGORY_POST",0);
 define("CATEGORY_PRODUCT",1);
+define("CATEGORY_ITEM_PRODUCT",5);
+define("CATEGORY_ITEM_POST",6);
 
 define("ACTIVE",1);
 define("DEACTIVATE",0);
