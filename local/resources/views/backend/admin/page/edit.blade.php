@@ -47,6 +47,53 @@
             </div>
             <div class="col-md-6">
                 <div class="wrap-create-edit">
+                    <strong class="text-title-right">Ngôn Ngữ</strong>
+                    @php
+                        $localesPost=$translation->posts()->get();
+                        $insertLangArray = array();
+                    @endphp
+                    @if(count($localesPost)!=count($locales))
+                        <select class="form-control select-locale" name="locale_id">
+                            @foreach($locales as $key=>$item)
+                                @foreach($localesPost as $key2=>$item2)
+
+                                    @if($item->id==$item2->locale_id)
+                                        <option data-href="{{ route('post.edit',['id'=>$item2->id,'locale_id'=>$item2->locale_id]) }} "
+                                                data-post-id="{{$item2->id}}" value="{{$item->id}}"
+                                                @if($post->locale_id==$item->id) selected @endif>{{$item->name}}</option>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                            @foreach($locales as $key=>$item)
+                                @if(!in_array($item->id,$localesPost->pluck('locale_id')->toArray()))
+                                    @php
+                                        array_push($insertLangArray, $item);
+                                    @endphp
+                                @endif
+                            @endforeach
+                        </select>
+                    @else
+                        <select class="form-control select-locale" name="locale_id">
+                            @foreach($locales as $key=>$item)
+                                @foreach($localesPost as $key2=>$item2)
+                                    @if($item->id==$item2->locale_id)
+                                        <option data-href="{{ route('post.edit',['id'=>$item2->id,'locale_id'=>$item2->locale_id]) }}"
+                                                data-post-id="{{$item2->id}}" value="{{$item->id}}"
+                                                @if($post->locale_id==$item->id) selected @endif>{{$item->name}}</option>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                        </select>
+
+                    @endif
+                    <div class="group-more-lang">
+                        @foreach($insertLangArray as $key=>$item)
+                            <a href="{{ route('post.createLocale',['translation_id'=>$post->translation_id,'locale_id'=>$item->id]) }}">Thêm
+                                Ngôn Ngữ {{$item->name}}</a><br>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="wrap-create-edit">
                     <strong class="text-title-right">Hình Đại Diện</strong>
                     <div class="form-group">
                         @if($post->image!='')

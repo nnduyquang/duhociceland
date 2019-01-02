@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="wrap-create-edit">
-                    {!! Form::hidden('post_type', 1) !!}
+                    {!! Form::hidden('post_type', IS_POST) !!}
                     <strong class="text-title-left">Tên Bài Viết</strong>
                     <div class="form-group">
                         {!! Form::text('title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}

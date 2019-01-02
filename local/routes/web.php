@@ -44,9 +44,11 @@ Route::group(['middleware' => ['auth']], function () {
     //PAGE
     Route::get('sml_admin/page', ['as' => 'page.index', 'uses' => 'PostController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']])->defaults('type',IS_PAGE);
     Route::post('sml_admin/page/create', ['as' => 'page.store', 'uses' => 'PostController@store', 'middleware' => ['permission:page-create']])->defaults('type',IS_PAGE);
-    Route::post('sml_admin/page', ['as' => 'page.search', 'uses' => 'PostController@search']);
-    Route::get('sml_admin/page/create', ['as' => 'page.create', 'uses' => 'PostController@create', 'middleware' => ['permission:page-create']])->defaults('type',IS_PAGE);
-    Route::get('sml_admin/page/{id}/edit', ['as' => 'page.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:page-edit']])->defaults('type',IS_PAGE);
+    Route::post('sml_admin/page/create-more-post-lang', ['as' => 'page.storeLocale', 'uses' => 'PostController@storeLocale', 'middleware' => ['permission:post-create']])->defaults('type',IS_PAGE);
+    Route::post('sml_admin/page', ['as' => 'page.search', 'uses' => 'PostController@search'])->defaults('type',IS_PAGE);
+    Route::get('sml_admin/page/{locale_id}/create', ['as' => 'page.create', 'uses' => 'PostController@create', 'middleware' => ['permission:page-create']])->defaults('type',IS_PAGE);
+    Route::get('sml_admin/page/{translation_id}/{locale_id}/create', ['as' => 'page.createLocale', 'uses' => 'PostController@createLocale', 'middleware' => ['permission:post-create']])->defaults('type',IS_PAGE);
+    Route::get('sml_admin/page/{id}/{locale_id}/edit', ['as' => 'page.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:page-edit']])->defaults('type',IS_PAGE);
     Route::patch('sml_admin/page/{id}', ['as' => 'page.update', 'uses' => 'PostController@update', 'middleware' => ['permission:page-edit']])->defaults('type',IS_PAGE);
     Route::delete('sml_admin/page/{id}', ['as' => 'page.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:page-delete']])->defaults('type',IS_PAGE);
 
@@ -62,15 +64,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('sml_admin/danh-muc-bai-viet/{id}', ['as' => 'categorypost.destroy', 'uses' => 'CategoryItemController@destroy', 'middleware' => ['permission:page-delete']])->defaults('type','categorypost');
 
     //POST
-    Route::get('sml_admin/post', ['as' => 'post.index', 'uses' => 'PostController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
-    Route::post('sml_admin/post/create', ['as' => 'post.store', 'uses' => 'PostController@store', 'middleware' => ['permission:post-create']]);
-    Route::post('sml_admin/post/create-more-post-lang', ['as' => 'post.storeLocale', 'uses' => 'PostController@storeLocale', 'middleware' => ['permission:post-create']]);
+    Route::get('sml_admin/post', ['as' => 'post.index', 'uses' => 'PostController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']])->defaults('type',IS_POST);
+    Route::post('sml_admin/post/create', ['as' => 'post.store', 'uses' => 'PostController@store', 'middleware' => ['permission:post-create']])->defaults('type',IS_POST);
+    Route::post('sml_admin/post/create-more-post-lang', ['as' => 'post.storeLocale', 'uses' => 'PostController@storeLocale', 'middleware' => ['permission:post-create']])->defaults('type',IS_POST);
     Route::post('sml_admin/post', ['as' => 'post.search', 'uses' => 'PostController@search']);
-    Route::get('sml_admin/post/{locale_id}/create', ['as' => 'post.create', 'uses' => 'PostController@create', 'middleware' => ['permission:post-create']]);
-    Route::get('sml_admin/post/{translation_id}/{locale_id}/create', ['as' => 'post.createLocale', 'uses' => 'PostController@createLocale', 'middleware' => ['permission:post-create']]);
-    Route::get('sml_admin/post/{id}/{locale_id}/edit', ['as' => 'post.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']]);
-    Route::patch('sml_admin/post/{id}', ['as' => 'post.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']]);
-    Route::delete('sml_admin/post/{id}', ['as' => 'post.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:post-delete']]);
+    Route::get('sml_admin/post/{locale_id}/create', ['as' => 'post.create', 'uses' => 'PostController@create', 'middleware' => ['permission:post-create']])->defaults('type',IS_POST);
+    Route::get('sml_admin/post/{translation_id}/{locale_id}/create', ['as' => 'post.createLocale', 'uses' => 'PostController@createLocale', 'middleware' => ['permission:post-create']])->defaults('type',IS_POST);
+    Route::get('sml_admin/post/{id}/{locale_id}/edit', ['as' => 'post.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']])->defaults('type',IS_POST);
+    Route::patch('sml_admin/post/{id}', ['as' => 'post.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']])->defaults('type',IS_POST);
+    Route::delete('sml_admin/post/{id}', ['as' => 'post.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:post-delete']])->defaults('type',IS_POST);
 
     //CATEGORY PRODUCT
     Route::get('sml_admin/danh-muc-san-pham', ['as' => 'categoryproduct.index', 'uses' => 'CategoryItemController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']])->defaults('type','categoryproduct');

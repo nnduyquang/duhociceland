@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-4 text-right">
                 @permission(('page-create'))
-                <a class="btn btn-success" href="{{ route('page.create') }}"> Tạo Mới Trang</a>
+                <a class="btn btn-success" href="{{ route('page.create',['locale_id'=>1]) }}"> Tạo Mới Trang</a>
                 @endpermission
             </div>
         </div>
@@ -52,29 +52,58 @@
                 <tr>
                     <th>TT</th>
                     <th>Tên Trang</th>
+                    <th>
+                        <div class="wrap-image">
+                            {{--@php--}}
+                            {{--dd($locales->pluck('id')->toArray());--}}
+                            {{--@endphp--}}
+                            @foreach($locales as $key=>$item)
+                                {{ Html::image($item->icon,'',array('id'=>'','class'=>'image-flag'))}}
+                            @endforeach
+                        </div>
+                    </th>
                     <th>Path</th>
                     <th>Trạng Thái</th>
                     <th>Người Đăng</th>
                     <th>Ngày Đăng</th>
                     <th>Ngày Cập Nhật</th>
-                    <th>Tình Trạng</th>
                     <th width="280px">Action</th>
                 </tr>
                 @foreach ($posts as $key => $data)
                     <td>{{ ++$i }}</td>
-                    <td>{{ $data->title }}</td>
-                    <td>{{ $data->path }}</td>
-                    <td>{{ $data->is_active }}</td>
-                    <td>{{ $data->users->name }}</td>
-                    <td>{{ $data->created_at }}</td>
-                    <td>{{ $data->updated_at }}</td>
-                    <td>{{$data->is_active}}</td>
+                    <td>{{ $data->posts()->first()->title }}</td>
+                    <td>
+                        <div class="group-locale">
+                            @php
+                                $localesPost=$data->posts()->get();
+                            @endphp
+                            @foreach($locales as $key=>$item)
+                                @if(in_array($item->id,$localesPost->pluck('locale_id')->toArray()))
+                                    @foreach($localesPost as $key2=>$item2)
+                                        @if($item2->locale_id==$item->id)
+                                            <a href="{{ route('page.edit',['id'=>$item2->id,'locale_id'=>$item2->locale_id]) }}"><i class="far fa-check-square"
+                                                                                                                                    style="color: green"></i>
+
+                                                @endif
+                                                @endforeach
+                                                @else
+                                                    <a href="{{ route('page.createLocale',['translation_id'=>$data->posts()->first()->translation_id,'locale_id'=>$item->id]) }}"><i
+                                                                class="fas fa-plus"></i></a>
+                                        @endif
+                                    @endforeach
+                        </div>
+                    </td>
+                    <td>{{ $data->posts()->first()->path }}</td>
+                    <td>{{ $data->posts()->first()->is_active }}</td>
+                    <td>{{ $data->posts()->first()->users->name }}</td>
+                    <td>{{ $data->posts()->first()->created_at }}</td>
+                    <td>{{ $data->posts()->first()->updated_at }}</td>
                     <td>
                         @permission(('page-edit'))
-                        <a class="btn btn-primary" href="{{ route('page.edit',$data->id) }}">Cập Nhật</a>
+                        <a class="btn btn-primary" href="{{ route('page.edit',['id'=>$data->posts()->first()->id,'locale_id'=>$data->posts()->first()->locale_id]) }}">Cập Nhật</a>
                         @endpermission
                         @permission(('page-delete'))
-                        {!! Form::open(['method' => 'DELETE','route' => ['page.destroy', $data->id],'style'=>'display:inline']) !!}
+                        {!! Form::open(['method' => 'DELETE','route' => ['page.destroy', $data->posts()->first()->id],'style'=>'display:inline']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                         @endpermission

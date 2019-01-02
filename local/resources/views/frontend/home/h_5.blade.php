@@ -40,7 +40,7 @@
             </div>
 
             <div class="col-12 text-center">
-                <button class="view-all">View All</button>
+                <button class="view-all">@lang('content.home_viewall')</button>
             </div>
 
         </div>

@@ -4,19 +4,19 @@ namespace App\Repositories\Backend\Post;
 
 interface PostRepositoryInterface
 {
-    public function getAllPostByTypeOrderById();
+    public function getAllPostByTypeOrderById($type);
 
-    public function showCreatePost($locale_id);
+    public function showCreatePost($locale_id,$type);
 
-    public function showCreateLangPost($translation_id, $locale_id);
+    public function showCreateLangPost($translation_id, $locale_id,$type);
 
-    public function showEditPost($id, $locale_id);
+    public function showEditPost($id, $locale_id,$type);
 
-    public function createNewPost($request);
+    public function createNewPost($request,$type);
 
-    public function createNewPostLocale($request);
+    public function createNewPostLocale($request,$type);
 
-    public function updatePost($request, $id);
+    public function updatePost($request, $id,$type);
 
     public function deletePost($id);
 }

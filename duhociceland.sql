@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 01, 2019 at 04:39 PM
--- Server version: 10.1.16-MariaDB
--- PHP Version: 7.0.27
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th1 02, 2019 lúc 10:43 AM
+-- Phiên bản máy phục vụ: 10.1.31-MariaDB
+-- Phiên bản PHP: 7.0.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `duhociceland`
+-- Cơ sở dữ liệu: `duhociceland`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category_items`
+-- Cấu trúc bảng cho bảng `category_items`
 --
 
 CREATE TABLE `category_items` (
@@ -47,7 +49,7 @@ CREATE TABLE `category_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `category_items`
+-- Đang đổ dữ liệu cho bảng `category_items`
 --
 
 INSERT INTO `category_items` (`id`, `name`, `path`, `description`, `content`, `image`, `image_mobile`, `level`, `parent_id`, `type`, `order`, `is_active`, `created_at`, `updated_at`, `seo_id`, `locale_id`, `translation_id`) VALUES
@@ -65,7 +67,7 @@ INSERT INTO `category_items` (`id`, `name`, `path`, `description`, `content`, `i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category_many`
+-- Cấu trúc bảng cho bảng `category_many`
 --
 
 CREATE TABLE `category_many` (
@@ -77,7 +79,7 @@ CREATE TABLE `category_many` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `category_many`
+-- Đang đổ dữ liệu cho bảng `category_many`
 --
 
 INSERT INTO `category_many` (`category_id`, `item_id`, `type`, `created_at`, `updated_at`) VALUES
@@ -123,7 +125,7 @@ INSERT INTO `category_many` (`category_id`, `item_id`, `type`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category_permissions`
+-- Cấu trúc bảng cho bảng `category_permissions`
 --
 
 CREATE TABLE `category_permissions` (
@@ -134,7 +136,7 @@ CREATE TABLE `category_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `category_permissions`
+-- Đang đổ dữ liệu cho bảng `category_permissions`
 --
 
 INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -148,7 +150,7 @@ INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `configs`
+-- Cấu trúc bảng cho bảng `configs`
 --
 
 CREATE TABLE `configs` (
@@ -163,7 +165,7 @@ CREATE TABLE `configs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `configs`
+-- Đang đổ dữ liệu cho bảng `configs`
 --
 
 INSERT INTO `configs` (`id`, `name`, `content`, `description`, `order`, `user_id`, `created_at`, `updated_at`) VALUES
@@ -191,7 +193,7 @@ INSERT INTO `configs` (`id`, `name`, `content`, `description`, `order`, `user_id
 -- --------------------------------------------------------
 
 --
--- Table structure for table `locales`
+-- Cấu trúc bảng cho bảng `locales`
 --
 
 CREATE TABLE `locales` (
@@ -205,7 +207,7 @@ CREATE TABLE `locales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `locales`
+-- Đang đổ dữ liệu cho bảng `locales`
 --
 
 INSERT INTO `locales` (`id`, `icon`, `name`, `short`, `sort`, `created_at`, `updated_at`) VALUES
@@ -215,7 +217,7 @@ INSERT INTO `locales` (`id`, `icon`, `name`, `short`, `sort`, `created_at`, `upd
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menus`
+-- Cấu trúc bảng cho bảng `menus`
 --
 
 CREATE TABLE `menus` (
@@ -234,7 +236,7 @@ CREATE TABLE `menus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menus`
+-- Đang đổ dữ liệu cho bảng `menus`
 --
 
 INSERT INTO `menus` (`id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
@@ -247,7 +249,7 @@ INSERT INTO `menus` (`id`, `title`, `url`, `target`, `icon_class`, `color`, `par
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -257,7 +259,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -273,7 +275,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Cấu trúc bảng cho bảng `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -285,7 +287,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permissions`
+-- Cấu trúc bảng cho bảng `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -299,7 +301,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permissions`
+-- Đang đổ dữ liệu cho bảng `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `category_permission_id`, `created_at`, `updated_at`) VALUES
@@ -331,7 +333,7 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `categor
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permission_role`
+-- Cấu trúc bảng cho bảng `permission_role`
 --
 
 CREATE TABLE `permission_role` (
@@ -340,7 +342,7 @@ CREATE TABLE `permission_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permission_role`
+-- Đang đổ dữ liệu cho bảng `permission_role`
 --
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
@@ -372,7 +374,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Cấu trúc bảng cho bảng `posts`
 --
 
 CREATE TABLE `posts` (
@@ -393,7 +395,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `posts`
+-- Đang đổ dữ liệu cho bảng `posts`
 --
 
 INSERT INTO `posts` (`id`, `title`, `path`, `description`, `content`, `image`, `post_type`, `is_active`, `user_id`, `created_at`, `updated_at`, `seo_id`, `locale_id`, `translation_id`) VALUES
@@ -405,8 +407,8 @@ INSERT INTO `posts` (`id`, `title`, `path`, `description`, `content`, `image`, `
 (6, 'education system', 'education-system', '<p>\r\n	Introduce&nbsp;education system\r\n</p>', NULL, 'images/uploads/images/home/icon3_519469.png', 1, 1, 1, '2019-01-01 03:48:09', '2019-01-01 03:48:09', NULL, 2, 4),
 (7, 'Nền Giáo Dục Tại Ireland', 'nen-giao-duc-tai-ireland', '<p>\r\n	Học tập trong một trong những hệ thống giáo dục tốt nhất trên thế giới về thành tích giáo dục đại học\r\n</p>', NULL, 'images/uploads/images/home/irelandeducation_276494.jpg', 1, 1, 1, '2019-01-01 04:44:58', '2019-01-01 04:44:58', NULL, 1, 6),
 (8, 'Ireland Education', 'ireland-education', 'Study in one of the best education systems in the world for higher education achievements', NULL, 'images/uploads/images/home/irelandeducation_276494.jpg', 1, 1, 1, '2019-01-01 04:45:58', '2019-01-01 04:45:58', NULL, 2, 6),
-(9, 'Thủ Tục Xin Visa Du Học Ireland', 'thu-tuc-xin-visa-du-hoc-ireland', '<p>\r\n	<span break-word="" style="display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); cursor: text; font-family: sans-serif,Arial,Verdana,">Chúng tôi cung cấp dịch vụ làm visa du học ireland nhanh chóng và dễ dàng</span>\r\n</p>', NULL, 'images/uploads/images/home/1531909544evisa_724324.jpg', 1, 1, 1, '2019-01-01 05:07:13', '2019-01-01 11:54:48', NULL, 1, 8),
-(10, 'Visas for International Students in Ireland', 'visas-for-international-students-in-ireland', '<p>\r\n	<span break-word="" style="display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); cursor: text; font-family: sans-serif,Arial,Verdana,">We offer ireland quick and easy student visa services</span>\r\n</p>', NULL, 'images/uploads/images/home/1531909544evisa_724324.jpg', 1, 1, 1, '2019-01-01 05:07:42', '2019-01-01 11:54:27', NULL, 2, 8),
+(9, 'Thủ Tục Xin Visa Du Học Ireland', 'thu-tuc-xin-visa-du-hoc-ireland', '<p>\r\n	<span break-word=\"\" style=\"display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); cursor: text; font-family: sans-serif,Arial,Verdana,\">Chúng tôi cung cấp dịch vụ làm visa du học ireland nhanh chóng và dễ dàng</span>\r\n</p>', NULL, 'images/uploads/images/home/1531909544evisa_724324.jpg', 1, 1, 1, '2019-01-01 05:07:13', '2019-01-01 11:54:48', NULL, 1, 8),
+(10, 'Visas for International Students in Ireland', 'visas-for-international-students-in-ireland', '<p>\r\n	<span break-word=\"\" style=\"display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); cursor: text; font-family: sans-serif,Arial,Verdana,\">We offer ireland quick and easy student visa services</span>\r\n</p>', NULL, 'images/uploads/images/home/1531909544evisa_724324.jpg', 1, 1, 1, '2019-01-01 05:07:42', '2019-01-01 11:54:27', NULL, 2, 8),
 (11, 'Sống ở nước nói tiếng Anh', 'song-o-nuoc-noi-tieng-anh', NULL, NULL, 'images/uploads/images/home/themify-edit-file_258172.png', 1, 1, 1, '2019-01-01 12:01:24', '2019-01-01 12:04:33', NULL, 1, 10),
 (12, 'Live in an English speaking country', 'live-in-an-english-speaking-country', NULL, NULL, 'images/uploads/images/home/themify-edit-file_258172.png', 1, 1, 1, '2019-01-01 12:03:52', '2019-01-01 14:35:05', NULL, 2, 10),
 (13, 'Tiếp cận với các cơ hội nghề nghiệp với các công ty hàng đầu thế giới đặt tại Ireland như Apple, Google, Facebook và Pfizer và nhiều, nhiều khác.', 'tiep-can-voi-cac-co-hoi-nghe-nghiep-voi-cac-cong-ty-hang-dau-the-gioi-dat-tai-ireland-nhu-apple-google-facebook-va-pfizer-va-nhieu-nhieu-khac', NULL, NULL, 'images/uploads/images/home/themify-file_289739.png', 1, 1, 1, '2019-01-01 12:05:47', '2019-01-01 12:05:47', NULL, 1, 11),
@@ -414,15 +416,15 @@ INSERT INTO `posts` (`id`, `title`, `path`, `description`, `content`, `image`, `
 (15, 'Học tập trong một trong những hệ thống giáo dục tốt nhất trên thế giới về thành tích giáo dục đại học', 'hoc-tap-trong-mot-trong-nhung-he-thong-giao-duc-tot-nhat-tren-the-gioi-ve-thanh-tich-giao-duc-dai-hoc', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:07:24', '2019-01-01 12:07:24', NULL, 1, 12),
 (16, 'Study in one of the best education systems in the world for higher education achievements', 'study-in-one-of-the-best-education-systems-in-the-world-for-higher-education-achievements', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:08:12', '2019-01-01 12:08:12', NULL, 2, 12),
 (17, 'Được hưởng từ đầu tư của Ailen vào hệ thống giáo dục', 'duoc-huong-tu-dau-tu-cua-ailen-vao-he-thong-giao-duc', NULL, NULL, 'images/uploads/images/home/themify-user_205775.png', 1, 1, 1, '2019-01-01 12:09:05', '2019-01-01 12:09:05', NULL, 1, 13),
-(18, 'Benefit from Ireland''s investment in the education system', 'benefit-from-irelands-investment-in-the-education-system', NULL, NULL, 'images/uploads/images/home/themify-user_205775.png', 1, 1, 1, '2019-01-01 12:09:30', '2019-01-01 12:09:30', NULL, 2, 13),
+(18, 'Benefit from Ireland\'s investment in the education system', 'benefit-from-irelands-investment-in-the-education-system', NULL, NULL, 'images/uploads/images/home/themify-user_205775.png', 1, 1, 1, '2019-01-01 12:09:30', '2019-01-01 12:09:30', NULL, 2, 13),
 (19, 'Lựa chọn hơn 5000 bằng cấp quốc tế được công nhận', 'lua-chon-hon-5000-bang-cap-quoc-te-duoc-cong-nhan', NULL, NULL, 'images/uploads/images/home/themify-gift_168802.png', 1, 1, 1, '2019-01-01 12:10:16', '2019-01-01 12:10:16', NULL, 1, 14),
 (20, 'Choose  from over 5000 internationally recognised qualifications', 'choose-from-over-5000-internationally-recognised-qualifications', NULL, NULL, 'images/uploads/images/home/themify-gift_168802.png', 1, 1, 1, '2019-01-01 12:10:43', '2019-01-01 12:10:43', NULL, 2, 14),
 (21, 'Cơ hội nghiên cứu tầm cỡ thế giới trong các chương trình hàng đầu thế giới', 'co-hoi-nghien-cuu-tam-co-the-gioi-trong-cac-chuong-trinh-hang-dau-the-gioi', NULL, NULL, 'images/uploads/images/home/themify-mic_672773.png', 1, 1, 1, '2019-01-01 12:11:51', '2019-01-01 12:11:51', NULL, 1, 15),
 (22, 'Access world-class research opportunities in world-leading programmes', 'access-world-class-research-opportunities-in-world-leading-programmes', NULL, NULL, 'images/uploads/images/home/themify-mic_672773.png', 1, 1, 1, '2019-01-01 12:12:24', '2019-01-01 12:12:24', NULL, 2, 15),
 (23, 'Đạt được tham vọng của bạn ở quốc gia kinh doanh nhất châu Âu', 'dat-duoc-tham-vong-cua-ban-o-quoc-gia-kinh-doanh-nhat-chau-au', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:12:56', '2019-01-01 12:12:56', NULL, 1, 16),
-(24, 'Achieve your ambitions in Europe''s most entrepreneurial country', 'achieve-your-ambitions-in-europes-most-entrepreneurial-country', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:13:28', '2019-01-01 12:13:28', NULL, 2, 16),
+(24, 'Achieve your ambitions in Europe\'s most entrepreneurial country', 'achieve-your-ambitions-in-europes-most-entrepreneurial-country', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:13:28', '2019-01-01 12:13:28', NULL, 2, 16),
 (25, 'Tham dự với 35.000 sinh viên quốc tế đến từ 161 quốc gia hưởng thụ nền văn hóa sôi động của Ai Len', 'tham-du-voi-35000-sinh-vien-quoc-te-den-tu-161-quoc-gia-huong-thu-nen-van-hoa-soi-dong-cua-ai-len', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:14:03', '2019-01-01 12:14:03', NULL, 1, 17),
-(26, 'Join the 35,000 international students from 161 countries enjoying Ireland''s vibrant culture', 'join-the-35000-international-students-from-161-countries-enjoying-irelands-vibrant-culture', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:14:23', '2019-01-01 12:14:23', NULL, 2, 17),
+(26, 'Join the 35,000 international students from 161 countries enjoying Ireland\'s vibrant culture', 'join-the-35000-international-students-from-161-countries-enjoying-irelands-vibrant-culture', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:14:23', '2019-01-01 12:14:23', NULL, 2, 17),
 (27, 'Trải nghiệm sống trong một trong những quốc gia thân thiện và an toàn nhất trên thế giới', 'trai-nghiem-song-trong-mot-trong-nhung-quoc-gia-than-thien-va-an-toan-nhat-tren-the-gioi', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:14:56', '2019-01-01 12:14:56', NULL, 1, 18),
 (28, 'Experience living in one of the friendliest and safest countries in the world', 'experience-living-in-one-of-the-friendliest-and-safest-countries-in-the-world', NULL, NULL, 'images/uploads/images/home/themify-desktop_158711.png', 1, 1, 1, '2019-01-01 12:15:35', '2019-01-01 12:15:35', NULL, 2, 18),
 (29, 'Bài Viết Chuyên Ngành 1', 'bai-viet-chuyen-nganh-1', '<p>\r\n	Mô Tả Cho Bài Viết Chuyên Ngành 1\r\n</p>', '<p>\r\n	Nội Dung Cho<b> </b>Bài Viết Chuyên Ngành 1\r\n</p>', 'images/uploads/images/home/feature2_558461.jpg', 1, 1, 1, '2019-01-01 12:49:10', '2019-01-01 12:56:07', NULL, 1, 20),
@@ -430,16 +432,18 @@ INSERT INTO `posts` (`id`, `title`, `path`, `description`, `content`, `image`, `
 (31, 'Bài Viết Chuyên Ngành 2', 'bai-viet-chuyen-nganh-2', '<p>\r\n	Mô tả cho bài viết chuyên ngành 2\r\n</p>', '<p>\r\n	Nội dung bài viết chuyên ngành 2\r\n</p>', 'images/uploads/images/home/feature2_558461.jpg', 1, 1, 1, '2019-01-01 12:55:09', '2019-01-01 12:55:09', NULL, 1, 21),
 (32, 'News 2', 'news-2', '<p>\r\n	Description for News 2\r\n</p>', '<p>\r\n	Content for News 2\r\n</p>', 'images/uploads/images/home/feature2_558461.jpg', 1, 1, 1, '2019-01-01 13:14:40', '2019-01-01 13:14:40', NULL, 2, 21),
 (33, 'Bài Viết Chuyên Ngành 3', 'bai-viet-chuyen-nganh-3', '<p>\r\n	Mọ Tả Cho Bài Viết Chuyên Ngành 3\r\n</p>', '<p>\r\n	Nội Dung Cho Bài Viết CHuyên Ngành 3\r\n</p>', 'images/uploads/images/home/feature2_558461.jpg', 1, 1, 1, '2019-01-01 13:15:34', '2019-01-01 13:15:34', NULL, 1, 22),
-(34, 'News 3', 'news-3', '<p>\r\n	Description for News 3\r\n</p>', '<p>\r\n	<span style="display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); cursor: text; font-family: sans-serif,Arial,Verdana,&quot;Trebuchet MS&quot;; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 20.8px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px; word-wrap: break-word;">Content for News 3</span>\r\n</p>', 'images/uploads/images/home/feature2_558461.jpg', 1, 1, 1, '2019-01-01 13:17:11', '2019-01-01 13:17:11', NULL, 2, 22),
+(34, 'News 3', 'news-3', '<p>\r\n	Description for News 3\r\n</p>', '<p>\r\n	<span style=\"display: inline !important; float: none; background-color: transparent; color: rgb(51, 51, 51); cursor: text; font-family: sans-serif,Arial,Verdana,&quot;Trebuchet MS&quot;; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; letter-spacing: normal; line-height: 20.8px; orphans: 2; text-align: left; text-decoration: none; text-indent: 0px; text-transform: none; -webkit-text-stroke-width: 0px; white-space: normal; word-spacing: 0px; word-wrap: break-word;\">Content for News 3</span>\r\n</p>', 'images/uploads/images/home/feature2_558461.jpg', 1, 1, 1, '2019-01-01 13:17:11', '2019-01-01 13:17:11', NULL, 2, 22),
 (35, 'Tư Vấn Du Học Ireland', 'tu-van-du-hoc-ireland', '<p>\r\n	Tư Vấn Về Giáo Dục Cho Sinh Viên Việt Nam Có Kế Hoạch Học Tập Tại Nước Ngoài\r\n</p>', NULL, 'images/uploads/images/home/edusite-class-320x287_394560.jpg', 1, 1, 1, '2019-01-01 15:15:37', '2019-01-01 15:15:37', NULL, 1, 24),
 (36, 'Studying Abroad In Ireland', 'studying-abroad-in-ireland', '<p>\r\n	Provides educational advice to Vietnamese students who plan to study overseas\r\n</p>', NULL, 'images/uploads/images/home/edusite-class-320x287_394560.jpg', 1, 1, 1, '2019-01-01 15:18:00', '2019-01-01 15:18:00', NULL, 2, 24),
 (37, 'Visa Du Học Tại Ireland', 'visa-du-hoc-tai-ireland', '<p>\r\n	Để có thể theo học tại Ireland thì điều đầu tiên là nắm vững các thủ thục xin visa du học Ireland 2019 mới nhất để có một khởi đầu thuận lợi\r\n</p>', NULL, 'images/uploads/images/home/edusite-class-320x287_394560.jpg', 1, 1, 1, '2019-01-01 15:21:55', '2019-01-01 15:25:25', NULL, 1, 25),
-(38, 'Applying For A Student Visa', 'applying-for-a-student-visa', '<p>\r\n	To be able to study in Ireland, the first thing is to master the latest procedures for applying for a 2019 Irish student visa to get a good start.\r\n</p>', NULL, 'images/uploads/images/home/edusite-class-320x287_394560.jpg', 1, 1, 1, '2019-01-01 15:24:20', '2019-01-01 15:25:17', NULL, 2, 25);
+(38, 'Applying For A Student Visa', 'applying-for-a-student-visa', '<p>\r\n	To be able to study in Ireland, the first thing is to master the latest procedures for applying for a 2019 Irish student visa to get a good start.\r\n</p>', NULL, 'images/uploads/images/home/edusite-class-320x287_394560.jpg', 1, 1, 1, '2019-01-01 15:24:20', '2019-01-01 15:25:17', NULL, 2, 25),
+(39, 'Giới Thiệu', 'gioi-thieu', '<p>\r\n	Giới Thiệu\r\n</p>', '<p>\r\n	Giới Thiệu\r\n</p>', NULL, 0, 1, 1, '2019-01-02 09:30:30', '2019-01-02 09:30:30', NULL, 1, 30),
+(40, 'About Us', 'about-us', '<p>\r\n	About Us\r\n</p>', '<p>\r\n	About Us\r\n</p>', NULL, 0, 1, 1, '2019-01-02 09:36:25', '2019-01-02 09:36:25', NULL, 2, 30);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -466,7 +470,7 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Cấu trúc bảng cho bảng `roles`
 --
 
 CREATE TABLE `roles` (
@@ -479,7 +483,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Đang đổ dữ liệu cho bảng `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
@@ -488,7 +492,7 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_user`
+-- Cấu trúc bảng cho bảng `role_user`
 --
 
 CREATE TABLE `role_user` (
@@ -497,7 +501,7 @@ CREATE TABLE `role_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `role_user`
+-- Đang đổ dữ liệu cho bảng `role_user`
 --
 
 INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
@@ -506,7 +510,7 @@ INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seos`
+-- Cấu trúc bảng cho bảng `seos`
 --
 
 CREATE TABLE `seos` (
@@ -519,10 +523,17 @@ CREATE TABLE `seos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `seos`
+--
+
+INSERT INTO `seos` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `seo_image`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Giới Thiệu', NULL, NULL, '2019-01-02 09:17:38', '2019-01-02 09:17:38');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `translations`
+-- Cấu trúc bảng cho bảng `translations`
 --
 
 CREATE TABLE `translations` (
@@ -534,7 +545,7 @@ CREATE TABLE `translations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `translations`
+-- Đang đổ dữ liệu cho bảng `translations`
 --
 
 INSERT INTO `translations` (`id`, `is_active`, `type`, `created_at`, `updated_at`) VALUES
@@ -561,12 +572,13 @@ INSERT INTO `translations` (`id`, `is_active`, `type`, `created_at`, `updated_at
 (22, 1, 0, '2019-01-01 13:15:34', '2019-01-01 13:15:34'),
 (23, 1, 6, '2019-01-01 15:10:03', '2019-01-01 15:10:03'),
 (24, 1, 0, '2019-01-01 15:15:36', '2019-01-01 15:15:36'),
-(25, 1, 0, '2019-01-01 15:21:55', '2019-01-01 15:21:55');
+(25, 1, 0, '2019-01-01 15:21:55', '2019-01-01 15:21:55'),
+(30, 1, 2, '2019-01-02 09:30:30', '2019-01-02 09:30:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -580,18 +592,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'nnduyquang', 'nnduyquang@gmail.com', '$2y$10$mStg572JFNI89/0Cg7TOGOUkACFaBl/nsNeOvx8zglr1qyJPA0tj6', NULL, '2018-03-14 07:24:10', NULL);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `category_items`
+-- Chỉ mục cho bảng `category_items`
 --
 ALTER TABLE `category_items`
   ADD PRIMARY KEY (`id`),
@@ -600,51 +612,51 @@ ALTER TABLE `category_items`
   ADD KEY `category_items_locale_id_foreign` (`locale_id`);
 
 --
--- Indexes for table `category_many`
+-- Chỉ mục cho bảng `category_many`
 --
 ALTER TABLE `category_many`
   ADD PRIMARY KEY (`category_id`,`item_id`);
 
 --
--- Indexes for table `category_permissions`
+-- Chỉ mục cho bảng `category_permissions`
 --
 ALTER TABLE `category_permissions`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `category_permissions_name_unique` (`name`);
 
 --
--- Indexes for table `configs`
+-- Chỉ mục cho bảng `configs`
 --
 ALTER TABLE `configs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `configs_user_id_foreign` (`user_id`);
 
 --
--- Indexes for table `locales`
+-- Chỉ mục cho bảng `locales`
 --
 ALTER TABLE `locales`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menus`
+-- Chỉ mục cho bảng `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Chỉ mục cho bảng `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `permissions`
+-- Chỉ mục cho bảng `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`),
@@ -652,14 +664,14 @@ ALTER TABLE `permissions`
   ADD KEY `permissions_category_permission_id_foreign` (`category_permission_id`);
 
 --
--- Indexes for table `permission_role`
+-- Chỉ mục cho bảng `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD PRIMARY KEY (`permission_id`,`role_id`),
   ADD KEY `permission_role_role_id_foreign` (`role_id`);
 
 --
--- Indexes for table `posts`
+-- Chỉ mục cho bảng `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
@@ -669,7 +681,7 @@ ALTER TABLE `posts`
   ADD KEY `posts_locale_id_foreign` (`locale_id`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -677,113 +689,126 @@ ALTER TABLE `products`
   ADD KEY `products_seo_id_foreign` (`seo_id`);
 
 --
--- Indexes for table `roles`
+-- Chỉ mục cho bảng `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
--- Indexes for table `role_user`
+-- Chỉ mục cho bảng `role_user`
 --
 ALTER TABLE `role_user`
   ADD PRIMARY KEY (`user_id`,`role_id`),
   ADD KEY `role_user_role_id_foreign` (`role_id`);
 
 --
--- Indexes for table `seos`
+-- Chỉ mục cho bảng `seos`
 --
 ALTER TABLE `seos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `translations`
+-- Chỉ mục cho bảng `translations`
 --
 ALTER TABLE `translations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `category_items`
+-- AUTO_INCREMENT cho bảng `category_items`
 --
 ALTER TABLE `category_items`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
--- AUTO_INCREMENT for table `category_permissions`
+-- AUTO_INCREMENT cho bảng `category_permissions`
 --
 ALTER TABLE `category_permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
--- AUTO_INCREMENT for table `configs`
+-- AUTO_INCREMENT cho bảng `configs`
 --
 ALTER TABLE `configs`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
--- AUTO_INCREMENT for table `locales`
+-- AUTO_INCREMENT cho bảng `locales`
 --
 ALTER TABLE `locales`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `menus`
+-- AUTO_INCREMENT cho bảng `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT for table `permissions`
+-- AUTO_INCREMENT cho bảng `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT cho bảng `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `seos`
+-- AUTO_INCREMENT cho bảng `seos`
 --
 ALTER TABLE `seos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `translations`
+-- AUTO_INCREMENT cho bảng `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `category_items`
+-- Các ràng buộc cho bảng `category_items`
 --
 ALTER TABLE `category_items`
   ADD CONSTRAINT `category_items_locale_id_foreign` FOREIGN KEY (`locale_id`) REFERENCES `locales` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -791,37 +816,38 @@ ALTER TABLE `category_items`
   ADD CONSTRAINT `category_items_translation_id_foreign` FOREIGN KEY (`translation_id`) REFERENCES `translations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `configs`
+-- Các ràng buộc cho bảng `configs`
 --
 ALTER TABLE `configs`
   ADD CONSTRAINT `configs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `permissions`
+-- Các ràng buộc cho bảng `permissions`
 --
 ALTER TABLE `permissions`
   ADD CONSTRAINT `permissions_category_permission_id_foreign` FOREIGN KEY (`category_permission_id`) REFERENCES `category_permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `permission_role`
+-- Các ràng buộc cho bảng `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `products`
+-- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_seo_id_foreign` FOREIGN KEY (`seo_id`) REFERENCES `seos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `products_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `role_user`
+-- Các ràng buộc cho bảng `role_user`
 --
 ALTER TABLE `role_user`
   ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `role_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

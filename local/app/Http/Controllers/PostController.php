@@ -19,12 +19,18 @@ class PostController extends Controller
         $this->postRepository = $postRepository;
     }
 
-    public function index(Request $request)
+    public function index(Request $request, $type)
     {
-        $data = $this->postRepository->getAllPostByTypeOrderById();
+        $data = $this->postRepository->getAllPostByTypeOrderById($type);
         $posts = $data['posts'];
         $locales = $data['locales'];
-        return view('backend.admin.post.index', compact('posts', 'locales'))->with('i', ($request->input('page', 1) - 1) * 5);
+        $view = '';
+        if ($type == IS_POST) {
+            $view = 'backend.admin.post.index';
+        } else {
+            $view = 'backend.admin.page.index';
+        }
+        return view($view, compact('posts', 'locales'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -32,20 +38,29 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($locale_id)
+    public function create($locale_id, $type)
     {
-        $data = $this->postRepository->showCreatePost($locale_id);
-        $categoryPost = $data['categoryPost'];
+        $data = $this->postRepository->showCreatePost($locale_id, $type);
         $locales = $data['locales'];
-        return view('backend.admin.post.create', compact('roles', 'categoryPost', 'locales','locale_id'));
+        if ($type == IS_POST) {
+            $categoryPost = $data['categoryPost'];
+
+            return view('backend.admin.post.create', compact('roles', 'categoryPost', 'locales', 'locale_id'));
+        } else {
+            return view('backend.admin.page.create', compact('roles', 'locales', 'locale_id'));
+        }
     }
 
-    public function createLocale($translation_id, $locale_id)
+    public function createLocale($translation_id, $locale_id, $type)
     {
-        $data = $this->postRepository->showCreateLangPost($translation_id, $locale_id);
-        $categoryPost = $data['categoryPost'];
+        $data = $this->postRepository->showCreateLangPost($translation_id, $locale_id, $type);
         $langLocale = $data['lang'];
-        return view('backend.admin.post.create', compact('roles', 'categoryPost', 'langLocale', 'translation_id', 'locale_id'));
+        if ($type == IS_POST) {
+            $categoryPost = $data['categoryPost'];
+            return view('backend.admin.post.create', compact('roles', 'categoryPost', 'langLocale', 'translation_id', 'locale_id'));
+        } else {
+            return view('backend.admin.page.create', compact('roles', 'langLocale', 'translation_id', 'locale_id'));
+        }
     }
 
     /**
@@ -54,14 +69,24 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $type)
     {
-        $data = $this->postRepository->createNewPost($request);
-        return redirect()->route('post.index');
+        $data = $this->postRepository->createNewPost($request, $type);
+        if ($type == IS_POST) {
+            return redirect()->route('post.index');
+        } else {
+            return redirect()->route('page.index');
+        }
     }
-    public function storeLocale(Request $request){
-        $data = $this->postRepository->createNewPostLocale($request);
-        return redirect()->route('post.index');
+
+    public function storeLocale(Request $request,$type)
+    {
+        $data = $this->postRepository->createNewPostLocale($request,$type);
+        if ($type == IS_POST) {
+            return redirect()->route('post.index');
+        } else {
+            return redirect()->route('page.index');
+        }
     }
 
     /**
@@ -81,14 +106,19 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,$locale_id)
+    public function edit($id, $locale_id,$type)
     {
-        $data = $this->postRepository->showEditPost($id,$locale_id);
-        $categoryPost = $data['categoryPost'];
-        $post = $data['post'];
+        $data = $this->postRepository->showEditPost($id, $locale_id,$type);
         $locales = $data['locales'];
-        $translation=$data['translation'];
-        return view('backend.admin.post.edit', compact('categoryPost', 'post', 'locales','translation'));
+        $translation = $data['translation'];
+        $post = $data['post'];
+        if ($type == IS_POST) {
+            $categoryPost = $data['categoryPost'];
+            return view('backend.admin.post.edit', compact('categoryPost', 'post', 'locales', 'translation'));
+        }else{
+            return view('backend.admin.page.edit', compact( 'post', 'locales', 'translation'));
+        }
+
     }
 
 
@@ -99,10 +129,15 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id,$type)
     {
-        $data = $this->postRepository->updatePost($request, $id);
-        return redirect()->route('post.index');
+        $data = $this->postRepository->updatePost($request, $id,$type);
+        if($type==IS_POST){
+            $returnRoute='post.index';
+        }else{
+            $returnRoute='page.index';
+        }
+        return redirect()->route($returnRoute);
     }
 
     /**
@@ -111,9 +146,15 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,$type)
     {
         $data = $this->postRepository->deletePost($id);
-        return redirect()->route('post.index');
+        $returnRoute='';
+        if($type==IS_POST){
+            $returnRoute='post.index';
+        }else{
+            $returnRoute='page.index';
+        }
+        return redirect()->route($returnRoute);
     }
 }
