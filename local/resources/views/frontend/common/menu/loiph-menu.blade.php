@@ -16,12 +16,17 @@
                 <a href=""><i class="fab fa-facebook-f"></i></a>
                 <a href=""><i class="fab fa-twitter"></i></a>
                 <a href=""><i class="fab fa-google-plus-g"></i></a>
+                <a href=""></a>
+                <a href="{{ route('user.change-language', ['language'=>'en'])}}"><img src="{{URL::to('images/icon/flags-06-128.png')}}" alt=""
+                                style="width: 22px;height: auto;margin: auto"></a>
+                <a href="{{ route('user.change-language', ['language'=>'vi'])}}"><img src="{{URL::to('images/icon/vietnam-flag.png')}}" alt=""
+                                style="width: 22px;height: auto;margin: auto"></a>
             </div>
         </div>
     </div>
     <div class="d-flex justify-content-center align-items-center pt-3 pb-3">
         <div class="mr-3 text-right">
-            <h4>CEAA</h4>
+            <h4>SEAA</h4>
             <h6>THE BEST COLLEGES</h6>
         </div>
         <img src="{{URL::asset('images/logo/logo.png')}}" alt="" style="width: 68px;height: auto">
@@ -33,14 +38,15 @@
     <div class="main-menu">
         <div class="container text-center d-lg-block d-md-block d-none">
             <ul>
-                <li>
-                    <a href="{{URL::asset('/')}}">HOME</a>
-                </li>
-                <li><a href="{{URL::asset('/services.html')}}">SERVICES</a></li>
-                <li><a href="{{URL::asset('/gallery.html')}}">GALLEGY</a></li>
-                <li><a href="{{URL::asset('/blogs.html')}}">BLOG</a></li>
-                <li><a href="{{URL::asset('/contact.html')}}">CONTACT</a></li>
-                <li><a href="{{URL::asset('/aboutus.html')}}">ABOUT US</a></li>
+                @foreach($listMenu as $key=>$item)
+                    <li><a class="{{ request()->is($item->link()) ? 'active' : '/' }}"
+                           href="{{URL::to($item->link())}}">@lang($item->title)</a></li>
+                @endforeach
+                {{--<li><a href="{{URL::asset('/services.html')}}">SERVICES</a></li>--}}
+                {{--<li><a href="{{URL::asset('/gallery.html')}}">GALLEGY</a></li>--}}
+                {{--<li><a href="{{URL::asset('/blogs.html')}}">BLOG</a></li>--}}
+                {{--<li><a href="{{URL::asset('/contact.html')}}">CONTACT</a></li>--}}
+                {{--<li><a href="{{URL::asset('/aboutus.html')}}">ABOUT US</a></li>--}}
                 <li>
                     <div class="search d-flex align-items-center">
                         <input type="text">

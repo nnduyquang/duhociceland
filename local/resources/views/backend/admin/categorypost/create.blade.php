@@ -1,6 +1,5 @@
 @extends('backend.admin.master')
 @section('title-page')
-    Tạo Mới Chuyên Mục Bài Viết
 @stop
 @section('styles')
 @stop
@@ -27,18 +26,26 @@
             </ul>
         </div>
     @endif
-    {!! Form::open(array('route' => 'categorypost.store','method'=>'POST')) !!}
+    @if(isset($translation_id))
+        {!! Form::open(array('route' => 'categorypost.storeLocale','method'=>'POST')) !!}
+    @else
+        {!! Form::open(array('route' => 'categorypost.store','method'=>'POST')) !!}
+    @endif
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6">
                 <div class="wrap-create-edit">
-                    <strong class="text-title-left">Tên Chuyên Mục:</strong>
+                    @if(isset($translation_id))
+                        {!! Form::hidden('translation_id', $translation_id) !!}
+                        {!! Form::hidden('locale_id', $langLocale->id) !!}
+                    @endif
+                    <strong class="text-title-left">Tên Chuyên Mục</strong>
                     <div class="form-group">
                         {!! Form::text('name',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
                     </div>
                 </div>
-                <div class="form-group">
-                    <strong>Menu Cấp</strong>
+                <div class="wrap-create-edit">
+                    <strong class="text-title-left">Menu Cấp</strong>
                     <div class="form-group">
                         <select class="form-control" name="parent_id">
                             <option value="-1">Gốc</option>
@@ -47,19 +54,31 @@
                     </div>
                 </div>
                 <div class="wrap-create-edit">
-                    <strong class="text-title-left">Mô Tả Ngắn:</strong>
+                    <strong class="text-title-left">Mô Tả Ngắn</strong>
                     <div class="form-group">
                         {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-page','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
                     </div>
                 </div>
                 <div class="wrap-create-edit">
-                    <strong class="text-title-left">Thứ Tự:</strong>
+                    <strong class="text-title-left">Thứ Tự</strong>
                     <div class="form-group">
                         {!! Form::text('order',null, array('placeholder' => 'Thứ Tự','class' => 'form-control')) !!}
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
+                <div class="wrap-create-edit">
+                    <strong class="text-title-right">Ngôn Ngữ</strong>
+                    @if(!isset($translation_id))
+                        <select class="form-control" name="locale_id">
+                            @foreach($locales as $key=>$item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
+                    @else
+                        {!! Form::text('locale_id',$langLocale->name, array('placeholder' => 'Tên','class' => 'form-control','disabled'=>'disabled')) !!}
+                    @endif
+                </div>
                 <div class="wrap-create-edit">
                     <strong class="text-title-right">Hình Đại Diện</strong>
                     <div class="form-group">
@@ -71,13 +90,32 @@
                         {{ Html::image('','',array('id'=>'showHinh','class'=>'show-image'))}}
                     </div>
                 </div>
-            </div>
-            <div class="wrap-create-edit">
-                <strong class="text-title-left">Nội Dung Bài Viết:</strong>
-                <div class="col-md-12 p-0">
-                    {!! Form::textarea('content',null,array('placeholder' => '','id'=>'content-post','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
+                <div class="wrap-create-edit">
+                    <strong class="text-title-right">Thêm Hình Sản Phẩm </strong>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {!! Form::button('Thêm', array('id' => 'btnBrowseMore','class'=>'btn btn-primary')) !!}
+                        </div>
+                        <div class="form-group">
+                            <div id="add-image" class="row">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                {{--<div class="wrap-create-edit">--}}
+                {{--<strong class="text-title-right">Hình Đại Diện Trên Mobile</strong>--}}
+                {{--<div class="form-group">--}}
+                {{--{!! Form::text('image_mobile', null, array('class' => 'form-control','id'=>'pathImageMobile')) !!}--}}
+                {{--<br>--}}
+                {{--{!! Form::button('Tìm', array('id' => 'btnBrowseImageMobile','class'=>'btn btn-primary')) !!}--}}
+                {{--</div>--}}
+                {{--<div class="form-group">--}}
+                {{--{{ Html::image('','',array('id'=>'showHinhMobile','class'=>'show-image'))}}--}}
+                {{--</div>--}}
+                {{--</div>--}}
             </div>
+
         </div>
     </div>
     <hr>
@@ -92,7 +130,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <strong>Từ khóa cần SEO</strong>
-                    {!! Form::text('seo_keywords',null, array('placeholder' => 'từ khóa cách nhau dấu phẩy (tối đa 5 từ)','class' => 'form-control')) !!}
+                    {!! Form::text('seo_keywords',null, array('placeholder' => 'keywords cách nhau dấu phẩy','class' => 'form-control')) !!}
                     <ul class="error-notice">
                     </ul>
                 </div>
@@ -106,24 +144,12 @@
                 {!! Form::textarea('seo_description',null,array('placeholder' => '','id'=>'seo-description-post','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
             </div>
         </div>
-        <h3>Mạng Xã Hội</h3>
-        <div class="content">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <strong>Chọn hình đại diện hiển thị MXH: </strong>
-                    {!! Form::text('seo_image', null, array('class' => 'form-control','id'=>'pathImageMXH')) !!}
-                    <br>
-                    {!! Form::button('Tìm', array('id' => 'btnBrowseImageMXH','class'=>'btn btn-primary')) !!}
-                </div>
-                <div class="form-group">
-                    {{ Html::image('','',array('id'=>'showHinhMXH','class'=>'show-image'))}}
-                </div>
-            </div>
-        </div>
     </div>
-    <div class="col-md-12 form-group">
-        <strong>Kích Hoạt:</strong>
-        <input name="is_active" data-on="Có" data-off="Không" type="checkbox" data-toggle="toggle">
+    <div class="wrap-create-edit">
+        <strong class="text-title-left">Kích Hoạt</strong>
+        <div class="form-group">
+            <input name="is_active" data-on="Có" data-off="Không" type="checkbox" data-toggle="toggle">
+        </div>
     </div>
     <div class="col-md-12" style="text-align:  center;">
         <button id="btnDanhMuc" type="submit" class="btn btn-primary">Tạo Mới Chuyên Mục Bài Viết</button>

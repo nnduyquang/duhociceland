@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="wrap-create-edit">
-                    {!! Form::hidden('post_type', IS_POST) !!}
+                    {!! Form::hidden('post_type', 1) !!}
                     <strong class="text-title-left">Tên Bài Viết</strong>
                     <div class="form-group">
                         {!! Form::text('title',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
@@ -53,6 +53,53 @@
             </div>
             <div class="col-md-6">
                 <div class="wrap-create-edit">
+                    <strong class="text-title-right">Ngôn Ngữ</strong>
+                    @php
+                        $localesPost=$translation->posts()->get();
+                        $insertLangArray = array();
+                    @endphp
+                    @if(count($localesPost)!=count($locales))
+                        <select class="form-control select-locale" name="locale_id">
+                            @foreach($locales as $key=>$item)
+                                @foreach($localesPost as $key2=>$item2)
+
+                                    @if($item->id==$item2->locale_id)
+                                        <option data-href="{{ route('post.edit',['id'=>$item2->id,'locale_id'=>$item2->locale_id]) }} "
+                                                data-post-id="{{$item2->id}}" value="{{$item->id}}"
+                                                @if($post->locale_id==$item->id) selected @endif>{{$item->name}}</option>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                            @foreach($locales as $key=>$item)
+                                @if(!in_array($item->id,$localesPost->pluck('locale_id')->toArray()))
+                                    @php
+                                        array_push($insertLangArray, $item);
+                                    @endphp
+                                @endif
+                            @endforeach
+                        </select>
+                    @else
+                        <select class="form-control select-locale" name="locale_id">
+                            @foreach($locales as $key=>$item)
+                                @foreach($localesPost as $key2=>$item2)
+                                    @if($item->id==$item2->locale_id)
+                                        <option data-href="{{ route('post.edit',['id'=>$item2->id,'locale_id'=>$item2->locale_id]) }}"
+                                                data-post-id="{{$item2->id}}" value="{{$item->id}}"
+                                                @if($post->locale_id==$item->id) selected @endif>{{$item->name}}</option>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                        </select>
+
+                    @endif
+                    <div class="group-more-lang">
+                        @foreach($insertLangArray as $key=>$item)
+                            <a href="{{ route('post.createLocale',['translation_id'=>$post->translation_id,'locale_id'=>$item->id]) }}">Thêm
+                                Ngôn Ngữ {{$item->name}}</a><br>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="wrap-create-edit">
                     <strong class="text-title-right">Hình Đại Diện</strong>
                     <div class="form-group">
                         @if($post->image!='')
@@ -68,6 +115,36 @@
                             {{ Html::image($post->image,'',array('id'=>'showHinhPost','class'=>'show-image'))}}
                         @else
                             {{ Html::image('','',array('id'=>'showHinhPost','class'=>'show-image'))}}
+                        @endif
+                    </div>
+                </div>
+                <div class="wrap-create-edit">
+                    <strong class="text-title-right">Icon</strong>
+                    <div class="form-group">
+                        {!! Form::text('icon',null, array('placeholder' => 'Tên','class' => 'form-control')) !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 p-0">
+            <div class="wrap-create-edit">
+                <div class="form-group">
+                    {!! Form::button('Thêm Hình Dịch Vụ', array('id' => 'btnBrowseMore','class'=>'btn btn-primary')) !!}
+                </div>
+
+                <div class="form-group">
+                    <div id="add-image" class="row">
+                        @if(!is_null($post->sub_image))
+                            @php
+                                $listImage=explode(';',$post->sub_image);
+                            @endphp
+                            @foreach($listImage as $key=>$item)
+                                <div class="col-md-3 text-center one-image">
+                                    {{ Html::image($item,'',array('id'=>'showHinh','class'=>'image-choose'))}}
+                                    {{ Form::hidden('image-choose[]', $item) }}
+                                    <span class='remove-image'>X</span>
+                                </div>
+                            @endforeach
                         @endif
                     </div>
                 </div>
@@ -140,18 +217,14 @@
                             {!! Form::button('Tìm', array('id' => 'btnBrowseImageMXH','class'=>'btn btn-primary')) !!}
                         </div>
                         <div class="form-group">
-                            @if(!is_null($post->seo_id))
-                                {{ Html::image($post->seos->seo_image,'',array('id'=>'showHinhMXH','class'=>'show-image'))}}
-                            @else
-                                {{ Html::image('','',array('id'=>'showHinhMXH','class'=>'show-image'))}}
-                            @endif
+                            {{ Html::image('','',array('id'=>'showHinhMXH','class'=>'show-image'))}}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-12 form-group">
                 <strong>Kích Hoạt:</strong>
-                <input {{$post->is_active==1?'checked':''}}  name="is_active" data-on="Có"
+                <input name="is_active" data-on="Có"
                        data-off="Không"
                        type="checkbox" data-toggle="toggle">
             </div>

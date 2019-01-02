@@ -645,6 +645,26 @@ img {
   margin-left: 10px;
 }
 
+.wrap-index table tr th .wrap-image {
+  display: inline-block;
+  width: 90px;
+  text-align: center;
+}
+
+.wrap-index table tr th .wrap-image .image-flag {
+  width: 24px;
+  height: 20px;
+  display: inline;
+}
+
+.wrap-index table td .group-locale {
+  text-align: center;
+}
+
+.wrap-index table td .group-locale a {
+  font-size: 27px;
+}
+
 .wrap-index table td a.edit-button {
   padding: 5px 10px;
   font-size: 12px;

@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Session;
 
 class CategoryItem extends Model
 {
     protected $fillable = [
-        'id','name','path','description','image','image_mobile','level','parent_id','type','seo_id','order','is_active','created_at','updated_at'
+        'name', 'path', 'description', 'content', 'image', 'image_mobile', 'level', 'parent_id', 'type', 'seo_id', 'locale_id', 'translation_id', 'order', 'is_active'
     ];
     protected $table = 'category_items';
     protected $hidden = ['id'];
@@ -20,22 +21,21 @@ class CategoryItem extends Model
             ->with('children');
     }
 
-    public function getAllOrderBy($order,$type)
+    public function translations()
     {
-        return $this->where('type', $type)->orderBy($order)->get();
+        return $this->belongsTo('App\Translation', 'translation_id');
     }
 
-    public function getAllParent($order, $type)
+    public function posts()
     {
-        $newArray = array();
-        $categoryItems = self::getAllOrderBy($order,$type);
-        foreach ($categoryItems as $key => $item) {
-            if (!isset($item->parent_id)) {
-                array_push($newArray, $item);
-            }
-        }
-        return $newArray;
+        return $this->belongsToMany('App\Post', 'category_many', 'category_id', 'item_id')->withTimestamps();
     }
+
+    public function products()
+    {
+        return $this->belongsToMany('App\Product', 'category_many', 'category_id', 'item_id')->withTimestamps();
+    }
+
     public function prepareParameters($parameters,$type)
     {
         if (!$parameters->has('is_active'))
@@ -75,12 +75,96 @@ class CategoryItem extends Model
         }
         return $parameters;
     }
+
     public function findLevelById($id){
         return $this->where('id',$id)->first()->level;
     }
+
+    public function findCategoryById($id)
+    {
+        return $this->where('id', $id)->first();
+    }
+
+    public function getChildCategoryByParentId($parent_id)
+    {
+        return $this->where('parent_id', $parent_id)->where('is_active', ACTIVE)->get();
+    }
+
+    public function getLanguage()
+    {
+        $lang = Session::get('website_language');
+        $locale = new Locale();
+        $locale_id = $locale->getLocaleIdByShortLang($lang);
+        return $locale_id;
+    }
+
     public function getAllCategoryByType($type)
     {
-        return $this->where('type', $type)->orderBy('order')->get();
+        $locale_id = self::getLanguage();
+        return $this->where('type', $type)->where('locale_id', $locale_id)->orderBy('order')->get();
+    }
+
+    public function getAllOrderBy($order, $type, $locale_id)
+    {
+        return $this->where('type', $type)->where('locale_id', $locale_id)->orderBy($order)->get();
+    }
+
+    public function getAllParent($order, $type, $locale_id)
+    {
+        $newArray = array();
+        $categoryItems = self::getAllOrderBy($order, $type, $locale_id);
+        foreach ($categoryItems as $key => $item) {
+            if (!isset($item->parent_id)) {
+                array_push($newArray, $item);
+            }
+        }
+        return $newArray;
+    }
+
+    public function getCategoryItemByPath($path)
+    {
+        $locale_id = self::getLanguage();
+        return $this->where('path', $path)->first()->translations()->first()->categoryitems()->where('locale_id', $locale_id)->first();
+    }
+
+    public function getCategoryItemById($id)
+    {
+        $locale_id = self::getLanguage();
+        return $this->where('id', $id)->where('locale_id', $locale_id)->first();
+    }
+
+    public function getCategoryItemOther($id, $type)
+    {
+        $locale_id = self::getLanguage();
+        return $this->where('id', '!=', $id)->where('type', $type)->where('locale_id', $locale_id)->get();
+    }
+
+    public function getAllPostByCategory($path)
+    {
+        $locale_id = self::getLanguage();
+        return $this->wherePath($path)->first()->translations()->first()->categoryitems()->where('locale_id', $locale_id)->first()->posts()->get();
+    }
+
+    public function getAllPostCategoryByTranslationId($translationId)
+    {
+        $locale_id = self::getLanguage();
+        return $this->where('translation_id', $translationId)->where('locale_id', $locale_id)->first()->posts()->get();
+    }
+
+    public function getCategoryByTranslationId($translationId)
+    {
+        $locale_id = self::getLanguage();
+        return $this->where('translation_id', $translationId)->where('locale_id', $locale_id)->first();
+    }
+
+    public function getAllCategoryByTranslationId($translationId)
+    {
+        return $this->where('translation_id', $translationId)->get();
+    }
+
+    public function getTranslationId($id)
+    {
+        return $this->where('id', $id)->first()->translation_id;
     }
     public function setIsActiveAttribute($value)
     {

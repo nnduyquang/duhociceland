@@ -15,4 +15,8 @@ interface CategoryItemRepositoryInterface
     public function updateCategoryItem($request,$id,$type);
 
     public function deleteCategoryItem($id);
+
+    public function showCreateLangCategoryItem($type,$translation_id, $locale_id);
+
+    public function createNewCategoryItemLocale($request,$type);
 }

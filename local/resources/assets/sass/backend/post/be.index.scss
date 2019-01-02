@@ -31,7 +31,27 @@
     }
   }
   table {
+    tr {
+      th {
+        .wrap-image {
+          display: inline-block;
+          width:90px;
+          text-align: center;
+          .image-flag {
+            width: 24px;
+            height: 20px;
+            display: inline;
+          }
+        }
+      }
+    }
     td {
+      .group-locale{
+        text-align: center;
+        a{
+          font-size: 27px;
+        }
+      }
       a.edit-button {
         padding: 5px 10px;
         font-size: 12px;
