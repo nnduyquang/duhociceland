@@ -3,6 +3,17 @@ var plugins = {
     slider: $('#slider'),
 };
 
+
+$('#m-menu').click(function () {
+    var $con = $('.menu-content').css('height');
+    if ($con == '0px') {
+        $('.menu-content').css({'height': 'auto', 'opacity': '1','top':'100%'});
+    } else {
+        $('.menu-content').css({'height': '0px', 'opacity': '0','top':'-100%'});
+    }
+})
+
+
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");

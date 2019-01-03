@@ -763,6 +763,16 @@ This class is added to the container
   z-index: 100;
 }
 
+#loiph-m-menu h4 {
+  font-size: 22px;
+  color: #0062cc;
+  font-weight: bold;
+}
+
+#loiph-m-menu h5 {
+  font-size: 13px;
+}
+
 #loiph-m-menu .search-box {
   margin: 16px 0px;
   border: 2px solid #6f6f6f;
@@ -816,6 +826,11 @@ This class is added to the container
 
 #loiph-m-menu .menu-content li:not(:last-child) {
   border-bottom: 1px solid #6f6f6f;
+}
+
+#loiph-m-menu .menu-content li img {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #loiph-m-menu .menu-content li a {
@@ -1423,6 +1438,89 @@ This class is added to the container
     width: fit-content;
     margin: auto;
   }
+}
+
+#phone-me {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+#phone-me .cover {
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+}
+
+#phone-me .cover .content {
+  width: 280px;
+  border-radius: 3px;
+  padding: 20px;
+  background-color: #eaeaea;
+  color: white;
+  z-index: 1001;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#phone-me .cover .content p {
+  padding-bottom: 10px;
+  color: #004085;
+  font-size: 13px;
+}
+
+#phone-me .cover .content button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  background-color: #004085;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#phone-me .cover .content input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 3px;
+  border: 1px solid #6f6f6f;
+}
+
+#phone-me .cover .content .closed {
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  z-index: 1001;
+}
+
+#phone-me .cover .content .closed i {
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 50%;
+  background-color: #0062cc;
+  color: white;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+#phone-me .cover .content .closed i:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 #support {

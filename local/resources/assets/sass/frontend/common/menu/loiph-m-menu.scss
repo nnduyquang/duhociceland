@@ -1,9 +1,15 @@
 #loiph-m-menu {
   width: 100% !important;
   position: relative;
-  //height: 0px;
-  //overflow: hidden;
   z-index: 100;
+  h4{
+    font-size: 22px;
+    color: #0062cc;
+    font-weight: bold;
+  }
+  h5{
+    font-size: 13px;
+  }
   .search-box {
     margin: 16px 0px;
     border: 2px solid #6f6f6f;
@@ -42,6 +48,7 @@
     list-style-type: none;
     padding: 0px 8px;
     transition: .6s;
+
     li {
       width: 100%;
       padding: 14px 16px;
@@ -49,6 +56,13 @@
       &:not(:last-child) {
         border-bottom: 1px solid #6f6f6f;
       }
+      img{
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      //&:nth-last-child(2) {
+      //  border-bottom: none;
+      //}
       a {
         color: #1b1e21;
         transition: .6s;
