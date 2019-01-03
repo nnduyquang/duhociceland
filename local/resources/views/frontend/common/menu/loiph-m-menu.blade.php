@@ -5,11 +5,10 @@
             <div class="search-box">
                 <input type="text" placeholder="Enter your search"><button><i class="fas fa-search"></i></button>
             </div>
-            <li><a href="">HOME</a></li>
-            <li><a href="">HOME</a></li>
-            <li><a href="">HOME</a></li>
-            <li><a href="">HOME</a></li>
-            <li><a href="">HOME</a></li>
+            @foreach($listMenu as $key=>$item)
+                <li><a class="{{ request()->is($item->link()) ? 'active' : '/' }}"
+                       href="{{URL::to($item->link())}}">@lang($item->title)</a></li>
+            @endforeach
 
         </ul>
     </div>

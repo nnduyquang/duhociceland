@@ -5,6 +5,7 @@ namespace App\Repositories\Frontend;
 
 use App\CategoryItem;
 use App\Menu;
+use App\Post;
 
 class FrontendRepository implements FrontendRepositoryInterface
 {
@@ -70,7 +71,9 @@ class FrontendRepository implements FrontendRepositoryInterface
     public function getAboutUs()
     {
         $data = [];
+        $post=new Post();
         $category = new CategoryItem();
+        $pageAboutUs=$post->getSinglePostByTranslationId(30);
         $homeOurLatestBlogsCategory = $category->getCategoryByTranslationId(19);
         $homePostOurLatestBlogsCategory = $category->getAllPostCategoryByTranslationId(19);
         $homeOurServicesCategory = $category->getCategoryByTranslationId(23);
@@ -82,10 +85,12 @@ class FrontendRepository implements FrontendRepositoryInterface
             $item->description = loai_bo_html_tag($item->description);
         }
         $homeOurLatestBlogsCategory->description = loai_bo_html_tag($homeOurLatestBlogsCategory->description);
+        $homeOurServicesCategory->description = loai_bo_html_tag($homeOurServicesCategory->description);
         $data['homeOurLatestBlogsCategory'] = $homeOurLatestBlogsCategory;
         $data['homePostOurLatestBlogsCategory'] = $homePostOurLatestBlogsCategory;
         $data['homeOurServicesCategory'] = $homeOurServicesCategory;
         $data['homePostOurServicesCategory'] = $homePostOurServicesCategory;
+        $data['pageAboutUs']=$pageAboutUs;
         return $data;
     }
 
@@ -95,12 +100,20 @@ class FrontendRepository implements FrontendRepositoryInterface
         $category = new CategoryItem();
         $homeOurServicesCategory = $category->getCategoryByTranslationId(23);
         $homePostOurServicesCategory = $category->getAllPostCategoryByTranslationId(23);
+        $homeOurLatestBlogsCategory = $category->getCategoryByTranslationId(19);
+        $homePostOurLatestBlogsCategory = $category->getAllPostCategoryByTranslationId(19);
         foreach ($homePostOurServicesCategory as $key => $item) {
             $item->description = loai_bo_html_tag($item->description);
         }
+        foreach ($homePostOurLatestBlogsCategory as $key => $item) {
+            $item->description = loai_bo_html_tag($item->description);
+        }
         $homeOurServicesCategory->description = loai_bo_html_tag($homeOurServicesCategory->description);
+        $homeOurLatestBlogsCategory->description = loai_bo_html_tag($homeOurLatestBlogsCategory->description);
         $data['homeOurServicesCategory'] = $homeOurServicesCategory;
         $data['homePostOurServicesCategory'] = $homePostOurServicesCategory;
+        $data['homeOurLatestBlogsCategory'] = $homeOurLatestBlogsCategory;
+        $data['homePostOurLatestBlogsCategory'] = $homePostOurLatestBlogsCategory;
         return $data;
     }
 
@@ -110,19 +123,31 @@ class FrontendRepository implements FrontendRepositoryInterface
         $category = new CategoryItem();
         $homeOurLatestBlogsCategory = $category->getCategoryByTranslationId(19);
         $homePostOurLatestBlogsCategory = $category->getAllPostCategoryByTranslationId(19);
+        $homeOurServicesCategory = $category->getCategoryByTranslationId(23);
+        $homePostOurServicesCategory = $category->getAllPostCategoryByTranslationId(23);
         foreach ($homePostOurLatestBlogsCategory as $key => $item) {
             $item->description = loai_bo_html_tag($item->description);
         }
+        foreach ($homePostOurServicesCategory as $key => $item) {
+            $item->description = loai_bo_html_tag($item->description);
+        }
         $homeOurLatestBlogsCategory->description = loai_bo_html_tag($homeOurLatestBlogsCategory->description);
+        $homeOurServicesCategory->description = loai_bo_html_tag($homeOurServicesCategory->description);
         $data['homeOurLatestBlogsCategory'] = $homeOurLatestBlogsCategory;
         $data['homePostOurLatestBlogsCategory'] = $homePostOurLatestBlogsCategory;
+        $data['homeOurServicesCategory'] = $homeOurServicesCategory;
+        $data['homePostOurServicesCategory'] = $homePostOurServicesCategory;
         return $data;
     }
 
 
     public function getFrontendCommon()
     {
-        // TODO: Implement getFrontendCommon() method.
+        $data = [];
+        $category = new CategoryItem();
+        $homePostOurServicesCategory = $category->getAllPostCategoryByTranslationId(23);
+        $data['homePostOurServicesCategory'] = $homePostOurServicesCategory;
+        return $data;
     }
 
     public function getAllMenuFrontend()

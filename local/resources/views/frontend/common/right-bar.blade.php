@@ -2,9 +2,9 @@
     <div>
         <h6>OUR SERVICES</h6>
         <ul class="services">
-            @for ($i = 0; $i < 8; $i++)
-                <li><a href="">Lorem ipsum dolor sit amet, consectetur.</a></li>
-            @endfor
+            @foreach($listFrontendCommon['homePostOurServicesCategory'] as $key=>$item)
+                <li><a href="">{{$item->title}}</a></li>
+            @endforeach
         </ul>
 
         <div class="search-bar d-flex justify-content-between">

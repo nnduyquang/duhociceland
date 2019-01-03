@@ -13,5 +13,6 @@ return [
     'home_viewall'=>'Xem Tất Cả',
     'home_subscribenow'=>'Theo dõi ngay bây giờ và nhận bản tin hàng tuần với các tài liệu giáo dục, bài viết thú vị, và nhiều hơn nữa',
     'home_subscribe'=>'Theo Dõi',
-    'home_enteremail'=>'Vui lòng nhập email...'
+    'home_enteremail'=>'Vui lòng nhập email...',
+    'blog_readmore'=>'Xem thêm'
 ];

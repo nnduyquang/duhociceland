@@ -151,6 +151,7 @@ class CategoryItem extends Model
         return $this->where('translation_id', $translationId)->where('locale_id', $locale_id)->first()->posts()->get();
     }
 
+
     public function getCategoryByTranslationId($translationId)
     {
         $locale_id = self::getLanguage();
