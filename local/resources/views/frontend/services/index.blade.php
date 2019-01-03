@@ -1,9 +1,9 @@
 @extends('frontend.master')
 @section('title')
-    DU HOC ICELAND
+    DU HOC IRELAND
 @stop
 @section('description')
-    DU HOC ICELAND
+    DU HOC IRELAND
 @stop
 @section('keyword')
 
