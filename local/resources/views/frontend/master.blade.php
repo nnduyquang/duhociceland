@@ -52,17 +52,17 @@
     $('#m-search').click(function () {
 
     })
-    $('#m-menu').click(function () {
-
-        var $con = $('.menu-content').css('height');
-        // alert($con);
-        // if ($con === '0px') {
-        //     $('.menu-content').css({'height': 'auto', 'opacity': '1','top':'100%'});
-        //     alert('123');
-        // } else {
-        //     $('.menu-content').css({'height': '0px', 'opacity': '0','top':'-100%'});
-        // }
-    })
+    // $('#m-menu').click(function () {
+    //
+    //     var $con = $('.menu-content').css('height');
+    //     // alert($con);
+    //     // if ($con === '0px') {
+    //     //     $('.menu-content').css({'height': 'auto', 'opacity': '1','top':'100%'});
+    //     //     alert('123');
+    //     // } else {
+    //     //     $('.menu-content').css({'height': '0px', 'opacity': '0','top':'-100%'});
+    //     // }
+    // })
     $('#owl-project').owlCarousel({
         loop: true,
         margin: 10,

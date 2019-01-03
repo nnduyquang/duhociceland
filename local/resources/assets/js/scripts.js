@@ -7,9 +7,9 @@ var plugins = {
 $('#m-menu').click(function () {
     var $con = $('.menu-content').css('height');
     if ($con == '0px') {
-        $('.menu-content').css({'height': 'auto', 'opacity': '1','top':'100%'});
+        $('.menu-content').css({'height': 'auto', 'opacity': '1','top':'100%','display':'block'});
     } else {
-        $('.menu-content').css({'height': '0px', 'opacity': '0','top':'-100%'});
+        $('.menu-content').css({'height': '0px', 'opacity': '0','top':'-100%','display':'none'});
     }
 })
 
