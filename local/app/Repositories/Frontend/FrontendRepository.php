@@ -4,6 +4,7 @@ namespace App\Repositories\Frontend;
 
 
 use App\CategoryItem;
+use App\Config;
 use App\Menu;
 use App\Post;
 
@@ -140,6 +141,24 @@ class FrontendRepository implements FrontendRepositoryInterface
         return $data;
     }
 
+    public function getServicesDetail($path)
+    {
+        $data = [];
+        $category = new CategoryItem();
+        $post=new Post();
+        $homeOurLatestBlogsCategory = $category->getCategoryByTranslationId(19);
+        $homePostOurLatestBlogsCategory = $category->getAllPostCategoryByTranslationId(19);
+        $homeOurLatestBlogsCategory->description = loai_bo_html_tag($homeOurLatestBlogsCategory->description);
+        $postServise=$post->getPostByPath($path);
+        foreach ($homePostOurLatestBlogsCategory as $key => $item) {
+            $item->description = loai_bo_html_tag($item->description);
+        }
+        $data['homeOurLatestBlogsCategory'] = $homeOurLatestBlogsCategory;
+        $data['homePostOurLatestBlogsCategory'] = $homePostOurLatestBlogsCategory;
+        $data['postServise']=$postServise;
+        return $data;
+    }
+
 
     public function getFrontendCommon()
     {
@@ -147,6 +166,36 @@ class FrontendRepository implements FrontendRepositoryInterface
         $category = new CategoryItem();
         $homePostOurServicesCategory = $category->getAllPostCategoryByTranslationId(23);
         $data['homePostOurServicesCategory'] = $homePostOurServicesCategory;
+        $config = new Config();
+        $dataConfig = $config->getConfigByListName(['config-company-name','config-phone','config-phone-1','config-phone-2','config-contact', 'config-email', 'config-contact', 'logo-config','script-js-header','script-js-body','contact-image-config','order-image-config','map-config','config-seo-title','config-seo-description','config-seo-image','slider-config']);
+        foreach ($dataConfig as $key => $item) {
+            if ($item->name == 'config-company-name')
+                $data['config-company-name'] = $item->content;
+            if ($item->name == 'config-phone')
+                $data['hotline'] = $item->content;
+            if ($item->name == 'config-phone-1')
+                $data['config-phone-1'] = $item->content;
+            if ($item->name == 'config-phone-2')
+                $data['config-phone-2'] = $item->content;
+            if ($item->name == 'config-email')
+                $data['email'] = $item->content;
+            if ($item->name == 'config-contact')
+                $data['address'] = $item->content;
+            if ($item->name == 'config-contact')
+                $data['contact'] = $item->content;
+            if ($item->name == 'script-js-header')
+                $data['script-js-header'] = $item->content;
+            if ($item->name == 'script-js-body')
+                $data['script-js-body'] = $item->content;
+            if ($item->name == 'config-seo-title')
+                $data['config-seo-title'] = $item->content;
+            if ($item->name == 'config-seo-description')
+                $data['config-seo-description'] = $item->content;
+            if ($item->name == 'config-seo-image')
+                $data['config-seo-image'] = $item->content;
+            if ($item->name == 'slider-config')
+                $data['slider-config'] = $item->content;
+        }
         return $data;
     }
 

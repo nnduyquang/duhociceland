@@ -14,5 +14,21 @@ return [
     'home_subscribenow'=>'Theo dõi ngay bây giờ và nhận bản tin hàng tuần với các tài liệu giáo dục, bài viết thú vị, và nhiều hơn nữa',
     'home_subscribe'=>'Theo Dõi',
     'home_enteremail'=>'Vui lòng nhập email...',
-    'blog_readmore'=>'Xem thêm'
+    'home_ourstudentgallery'=>'Hình ảnh về du học sinh',
+    'home_contact_title'=>'Đăng Ký Tư Vấn Miễn Phí',
+    'home_contact_name'=>'Tên của bạn',
+    'home_contact_phone'=>'Số điện thoại',
+    'home_contact_email'=>'Email',
+    'home_contact_message'=>'Nội dung',
+    'home_contact_button'=>'Gửi',
+    'blog_readmore'=>'Xem thêm',
+    'contact_quickcontact'=>'LIÊN HỆ NHANH VỚI CHÚNG TÔI',
+    'contact_content'=>'Bạn có thể liện hệ với chúng tôi bất cứ k hi nào, chúng tôi hỗ trợ 24/7 qua điện thoại hoặc email. Bạn cũng có thể sử dụng biểu mẫu bên dưới hoặc trực tiếp tại văn phòng của chúng tôi. Phục vụ bạn là niềm vui của chúng tôi',
+    'contact_address'=>'Địa chỉ',
+    'contact_form_name'=>'Tên của bạn',
+    'contact_form_title'=>'Tiêu đề',
+    'contact_form_phone'=>'Số điện thoại',
+    'contact_form_email'=>'Email',
+    'contact_form_message'=>'Nội dung',
+    'contact_form_send'=>'Gửi'
 ];

@@ -14,5 +14,21 @@ return [
     'home_subscribenow'=>'Subscribe now and receive weekly newsletter with educational materials, interesting posts, and much more!',
     'home_subscribe'=>'Subscribe',
     'home_enteremail'=>'Enter your email here...',
-    'blog_readmore'=>'Read more'
+    'home_ourstudentgallery'=>'Our Student Gallery',
+    'home_contact_title'=>'Get A Free Registration',
+    'home_contact_name'=>'Your Name',
+    'home_contact_phone'=>'Your Phone',
+    'home_contact_email'=>'Your Email',
+    'home_contact_message'=>'Message',
+    'home_contact_button'=>'Send',
+    'blog_readmore'=>'Read more',
+    'contact_quickcontact'=>'QUICK CONTACT TO US',
+    'contact_content'=>'You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.',
+    'contact_address'=>'Address',
+    'contact_form_name'=>'Your name here',
+    'contact_form_title'=>'Title here',
+    'contact_form_phone'=>'Your phone here',
+    'contact_form_email'=>'Your email here',
+    'contact_form_message'=>'Your message here...!',
+    'contact_form_send'=>'Send Info'
 ];

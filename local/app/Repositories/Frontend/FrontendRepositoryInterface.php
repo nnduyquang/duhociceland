@@ -15,6 +15,8 @@ interface FrontendRepositoryInterface
 
     public function getServices();
 
+    public function getServicesDetail($path);
+
     public function getFrontendCommon();
 
     public function getAllMenuFrontend();

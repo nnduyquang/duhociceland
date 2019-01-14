@@ -17,19 +17,18 @@
                         <li>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <p><span class="text-primary">Address:</span> 6 Barry's Place.
-                                    Cathedral Road, Cork City, Ireland</p>
+                                <p><span class="text-primary">Address:</span> {{loai_bo_html_tag($listFrontendCommon['contact'])}}</p>
                             </div>
                         <li>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-globe-americas"></i>
-                                <p><span class="text-primary">Email:</span> mickalleny2k@gmail.com</p>
+                                <p><span class="text-primary">Email:</span> {{$listFrontendCommon['email']}}</p>
                             </div>
                         </li>
                         <li>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-phone-square"></i>
-                                <p><span class="text-primary">Tel:</span> +84 - 1256- 465607</p>
+                                <p><span class="text-primary">Tel:</span>  {{$listFrontendCommon['config-phone-1']}}</p>
                             </div>
                         </li>
                         <li>
@@ -53,37 +52,94 @@
                 <div class="col-md-4 col-sm-6 mb-3 blog">
                     <h4>SERVICES</h4>
                     <ul>
-                        @for ($i = 0; $i < 3; $i++)
+                        @foreach($listFrontendCommon['homePostOurServicesCategory'] as $key=>$item)
+
 
                             <li>
                                 <div class="d-flex pb-2">
                                     <div class="img-ser"
-                                         style="background-image:url({{URL::asset('http://demo9.cmsmart.net/edusite_1/wp-content/uploads/2016/11/edusite-class-101x70.jpg')}});">
+                                         style="background-image:url({{URL::to($item->image)}});">
 
                                     </div>
-                                    <a href="">Services Demo 1</a>
+                                    <a href="">{{$item->title}}</a>
                                 </div>
                             </li>
 
-                        @endfor
 
+                        @endforeach
                     </ul>
 
                 </div>
                 <div class="col-md-3 col-sm-6 mb-3">
                     <h4>GALLERY</h4>
                     <div class="row p-2 mt-3">
-                        @for ($i = 0; $i < 9; $i++)
 
-                            <div class="col-4 p-1">
-                                <a href="">
-                                    <div class="img-gallery"
-                                         style="background-image:url({{URL::asset('http://demo9.cmsmart.net/edusite_1/wp-content/uploads/2016/11/edue-short-online-150x150.jpg')}}});">
 
-                                    </div>
-                                </a>
-                            </div>
-                        @endfor
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/1.jpg')}}">
+                                {{ HTML::image('images/student/1.jpg', 'alt', array()) }}
+                            </a>
+                        </div>
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/2.jpg')}}">
+                                {{ HTML::image('images/student/2.jpg', 'alt', array()) }}
+                            </a>
+                        </div>
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/3.jpg')}}">
+                                {{ HTML::image('images/student/3.jpg', 'alt', array()) }}
+                            </a>
+                        </div>
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/4.jpg')}}">
+                                {{ HTML::image('images/student/4.jpg', 'alt', array()) }}
+                            </a>
+                        </div>
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/5.jpg')}}">
+                                {{ HTML::image('images/student/5.jpg', 'alt', array()) }}
+                            </a>
+                        </div>
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/6.jpeg')}}">
+                                {{ HTML::image('images/student/6.jpeg', 'alt', array()) }}
+                            </a>
+                        </div>
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/7.jpg')}}">
+                                {{ HTML::image('images/student/7.jpg', 'alt', array()) }}
+                            </a>
+                        </div>
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/8.jpg')}}">
+                                {{ HTML::image('images/student/8.jpg', 'alt', array()) }}
+                            </a>
+                        </div>
+                        <div class="col-4 p-1">
+                            <a class="fancybox" data-caption=""
+                               data-fancybox="gallery-footer"
+                               href="{{URL::to('images/student/9.jpg')}}">
+                                {{ HTML::image('images/student/9.jpg', 'alt', array()) }}
+                            </a>
+                        </div>
+
+
                     </div>
                 </div>
             </div>

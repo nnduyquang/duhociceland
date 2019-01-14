@@ -18,7 +18,7 @@
                              style="background-image:url({{URL::to($item->image)}});">
                         </div>
                         <div class="p-3 info">
-                            <h4><a href="">{{$item->title}}</a></h4>
+                            <h4><a href="{{URL::to('services/'.$item->path)}}">{{$item->title}}</a></h4>
                             <p>{{$item->description}}</p>
                         </div>
                         <div class="footer p-3 d-flex justify-content-between">
@@ -30,7 +30,7 @@
                                 <i class="far fa-star"></i>
                             </div>
                             <div class="">
-                                <a href="">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+                                <a href="{{URL::to('services/'.$item->path)}}">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                     </div>

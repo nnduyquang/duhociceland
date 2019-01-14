@@ -4,19 +4,19 @@
             <div class="col-md-3 text-center mb-lg-0 mb-2">
                 <div class="info">
                     <i class="fas fa-map-marker-alt"></i>
-                    <p>6 Barry's Place. Cathedral Road, Cork City, Ireland.</p>
+                    <p>{{loai_bo_html_tag($listFrontendCommon['contact'])}}</p>
                 </div>
             </div>
             <div class="col-md-3 text-center mb-lg-0 mb-2">
                 <div class="info">
                     <i class="fas fa-headphones-alt"></i>
-                    <p>(+84) - 1256- 465607</p>
+                    <p>{{$listFrontendCommon['config-phone-1']}}</p>
                 </div>
             </div>
             <div class="col-md-3 text-center mb-lg-0 mb-2">
                 <div class="info">
                     <i class="far fa-envelope"></i>
-                    <p>Mickalleny2k@gmail.com</p>
+                    <p>{{$listFrontendCommon['email']}}</p>
                 </div>
             </div>
             <div class="col-md-3 text-center mb-lg-0 mb-2">
@@ -33,39 +33,36 @@
         </div>
         <div class="row">
             <div class="col-md-8 mb-lg-0 mb-2">
-                <h3>Quick contact to us</h3>
-                <p>You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You
-                    can also use a quick contact form below or visit our office personally. We would be happy to answer
-                    your questions.</p>
+                <h3>@lang('content.contact_quickcontact')</h3>
+                <p>@lang('content.contact_content')</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="text" placeholder="Your name here">
+                        <input type="text" placeholder="@lang('content.contact_form_name')">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" placeholder="Your email here">
+                        <input type="text" placeholder="@lang('content.contact_form_email')">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" placeholder="Your phone here">
+                        <input type="text" placeholder="@lang('content.contact_form_phone')">
                     </div>
                     <div class="col-md-6">
-                        <input type="text" placeholder="Title here">
+                        <input type="text" placeholder="@lang('content.contact_form_title')">
                     </div>
                     <div class="col-md-12">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Your message here....!"></textarea>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="@lang('content.contact_form_message')"></textarea>
                     </div>
                     <div class="col-md-12 text-left">
                         <button>
-                            Send Info <i class="fab fa-telegram-plane pl-1"></i>
+                            @lang('content.contact_form_send') <i class="fab fa-telegram-plane pl-1"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-lg-0 mb-2">
-                <h3>Maps</h3>
+                <h3>Map</h3>
                 <div class="mt-3">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.5622171649306!2d-8.483241484675204!3d51.90545288934236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48449014971ace0b%3A0xc8a1cf5badf15046!2s6+Barry&#39;s+Pl%2C+Cathedral+Rd%2C+Cork%2C+T23+E6TV%2C+Ai-len!5e0!3m2!1svi!2s!4v1545792777366"
-                            width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    <p>Address : 6 Barry's Place. Cathedral Road, Cork City, Ireland.</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.108945568562!2d106.66122695066046!3d10.80296726161878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175293abb8f578f%3A0xbae110f45f601d3c!2zMzkgVHLGsOG7nW5nIFPGoW4sIFBoxrDhu51uZyA0LCBUw6JuIELDrG5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1547453305918" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <p>@lang('content.contact_address') : {{loai_bo_html_tag($listFrontendCommon['contact'])}}</p>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 var plugins = {
     menuSideBar: $('.sidebar'),
     slider: $('#slider'),
+    sendMailContact:$('#h_1 #welcome .register button.submit-re'),
 };
 
 
@@ -58,6 +59,82 @@ $(document).ready(function () {
             pauseTime: 3000,
             pauseOnHover: true,
             controlNav: false,
+        });
+    }
+    function getBaseURL() {
+        var url = location.href;  // entire url including querystring - also: window.location.href;
+        var baseURL = url.substring(0, url.indexOf('/', 14));
+        if (baseURL.indexOf('http://localhost') != -1) {
+            // Base Url for localhost
+            var url = location.href;  // window.location.href;
+            var pathname = location.pathname;  // window.location.pathname;
+            var index1 = url.indexOf(pathname);
+            var index2 = url.indexOf("/", index1 + 1);
+            var baseLocalUrl = url.substr(0, index2);
+            return baseLocalUrl + "/";
+        }
+        else {
+            // Root Url for domain name
+            return baseURL + "/";
+        }
+    }
+
+    function runSendMailContact(){
+        $('#h_1 #welcome .register .button-group button.submit-re .loadingSending').css('display', 'inline-block');
+        $('#h_1 #welcome .register .input-group input.input-text').removeClass('is-invalid');
+        var data = new FormData($(this).get(0));
+        data.append('name', $("#h_1 #welcome .register .input-group input[name='name']").val());
+        data.append('phone', $("#h_1 #welcome .register .input-group input[name='phone']").val());
+        data.append('email', $("#h_1 #welcome .register .input-group input[name='email']").val());
+        data.append('description', $("#h_1 #welcome .register textarea[name='description']").val());
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: getBaseURL() + "sendmail/sendContact",
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            data: data,
+            success: function (data) {
+                if (data.success) {
+                    $('#h_1 #welcome .register .button-group button.submit-re .loadingSending').css('display', 'none');
+                    $('#h_1 #welcome .register .button-group button.submit-re .successSending').css('display', 'inline-block');
+                    $('#h_1 #welcome .register .button-group button.submit-re .successSending').fadeIn(500);
+                    $('#h_1 #welcome .register .button-group span').css('display', 'inline-block');
+                    $('#h_1 #welcome .register .button-group span').fadeIn(500);
+                    setTimeout("$('#h_1 #welcome .register .button-group button.submit-re .successSending').fadeOut(1500);", 3000);
+                    setTimeout("$('#h_1 #welcome .register .button-group span').fadeOut(1500);", 3000);
+                    $("#h_1 #welcome .register .input-group input[name='name']").val("");
+                    $("#h_1 #welcome .register .input-group input[name='email']").val("");
+                    $("#h_1 #welcome .register .input-group input[name='phone']").val("");
+                    $("#h_1 #welcome .register textarea[name='description']").val("");
+                }
+                else {
+                    $('#h_1 #welcome .register .button-group button.submit-re .loadingSending').css('display', 'none');
+                    var errors = data.validator;
+                    if (errors.hasOwnProperty('email')) {
+                        $('#h_1 #welcome .register .ip-email .input-text').addClass('is-invalid');
+                        $('#h_1 #welcome .register .ip-email .invalid-feedback').html(errors['email']);
+                    }
+                    if (errors.hasOwnProperty('name')) {
+                        $('#h_1 #welcome .register .ip-name .input-text').addClass('is-invalid');
+                        $('#h_1 #welcome .register .ip-name .invalid-feedback').html(errors['name']);
+                    }
+                    if (errors.hasOwnProperty('phone')) {
+                        $('#h_1 #welcome .register .ip-phone .input-text').addClass('is-invalid');
+                        $('#h_1 #welcome .register .ip-phone .invalid-feedback').html(errors['phone']);
+                    }
+                }
+            }
+        });
+    }
+    if (plugins.sendMailContact.length) {
+        plugins.sendMailContact.click(function () {
+            runSendMailContact();
         });
     }
 

@@ -23,7 +23,7 @@
       }
       h5 {
         font-size: 30px;
-        font-family: 'Vollkorn SC', serif;
+        //font-family: 'Vollkorn SC', serif;
       }
       p {
         width: 70%;
@@ -79,10 +79,12 @@
       margin-top: 10px;
       border-radius: 3px;
       background-color: #004085;
-      color: white;
       font-size: 13px;
       border: none;
       padding: 6px 8px;
+      a{
+        color: white;
+      }
     }
 
     .register {

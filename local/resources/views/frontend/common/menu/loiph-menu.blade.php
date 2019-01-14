@@ -5,11 +5,11 @@
             <div class="d-flex">
                 <div class="d-flex align-items-center mr-3">
                     <i class="fas fa-phone-square"></i>
-                    <p>(+84) - 1256- 465607</p>
+                    <p>{{$listFrontendCommon['config-phone-1']}}</p>
                 </div>
                 <div class="d-lg-flex d-sm-none d-none align-items-center">
                     <i class="fas fa-globe-americas"></i>
-                    <p> Mickalleny2k@gmail.com</p>
+                    <p> {{$listFrontendCommon['email']}}</p>
                 </div>
             </div>
             <div class="sc-nw">
@@ -17,7 +17,7 @@
                 <a href=""><i class="fab fa-twitter"></i></a>
                 <a href=""><i class="fab fa-google-plus-g"></i></a>
                 <a href=""></a>
-                <a href="{{ route('user.change-language', ['language'=>'en'])}}"><img src="{{URL::to('images/icon/flags-06-128.png')}}" alt=""
+                <a href="{{ route('user.change-language', ['language'=>'en'])}}"><img src="{{URL::to('images/icon/ie.png')}}" alt=""
                                 style="width: 22px;height: auto;margin: auto"></a>
                 <a href="{{ route('user.change-language', ['language'=>'vi'])}}"><img src="{{URL::to('images/icon/vietnam-flag.png')}}" alt=""
                                 style="width: 22px;height: auto;margin: auto"></a>

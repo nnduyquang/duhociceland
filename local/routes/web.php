@@ -7,6 +7,8 @@ Route::group(['middleware' => 'locale'], function() {
     Route::get('/about-us.html', 'FrontendController@getAboutUs')->name('aboutus');
     Route::get('/blogs.html','FrontendController@getBlogs')->name('blogs');
     Route::get('/services.html', 'FrontendController@getServices');
+    Route::get('/services/{path}', 'FrontendController@getServicesDetail');
+    Route::post('/sendmail/sendContact', ['as' => 'mail.sendmailContact', 'uses' => 'MailController@sendMailContact']);
 });
 
 
@@ -14,9 +16,6 @@ Route::get('/details.html', function () {
     return view('frontend.blog-details.index');
 });
 
-Route::get('/service-details.html', function () {
-    return view('frontend.service-detail.index');
-});
 
 
 Route::post('/tim-kiem','FrontendController@getSearch')->name('search');

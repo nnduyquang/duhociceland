@@ -1,0 +1,1 @@
+Dear irelandos.com,<br><br>The information is sent from website:<br>- Name: {{$name}}<br>- Email: {{$email}}<br>- Phone: {{$phone}}<br>- Content: {{$description}}<br>Thanks,<br>
