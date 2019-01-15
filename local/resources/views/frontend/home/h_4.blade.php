@@ -10,7 +10,6 @@
                     {{--<button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>--}}
                     {{--<button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>--}}
                 </div>
-
                 <div id="All" class="tabcontent active show ">
                     <div class="row">
 

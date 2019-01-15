@@ -71,6 +71,9 @@
       -webkit-background-size: cover;
       background-size: cover;
     }
+    &.active{
+      display: block;
+    }
   }
 
   /* Fade in tabs */

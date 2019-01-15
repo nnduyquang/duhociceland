@@ -661,7 +661,7 @@ This class is added to the container
 }
 
 #loiph-menu .top-info {
-  background-color: #004085;
+  background-color: green;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -891,8 +891,83 @@ This class is added to the container
   }
 }
 
+#slider2 .img-content {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  padding-top: 38px;
+  overflow: hidden;
+}
+
+#slider2 .img-content .test-slide {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+#slider2 .img-content .test-slide h5 {
+  font-family: 'Vollkorn SC', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+#slider2 .img-content .test-slide h4 {
+  font-family: 'Vollkorn SC', serif;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 25px auto 20px auto;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#slider2 .img-content .test-slide h6 {
+  width: 60%;
+  font-size: 17px;
+  margin: auto;
+  color: #6b6a6a;
+}
+
+#slider2 .img-content .test-title {
+  position: absolute;
+  text-align: left;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.66);
+  right: 0;
+  padding: 20px 20px;
+}
+
+#slider2 .img-content .test-title h4 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+  #slider2 .img-content .test-slide h5 {
+    font-size: 22px;
+  }
+  #slider2 .img-content .test-slide h4 {
+    font-size: 26px;
+  }
+  #slider2 .img-content .test-slide h6 {
+    width: 90%;
+  }
+  #slider2 .img-content .test-title {
+    width: 80%;
+  }
+  #slider2 .img-content .test-title h4 {
+    font-size: 15px;
+  }
+}
+
 #h_1 {
   position: relative;
+  z-index: 1;
 }
 
 #h_1 #top {
@@ -1265,6 +1340,10 @@ This class is added to the container
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#h_4 .tabcontent.active {
+  display: block;
 }
 
 @-webkit-keyframes fadeEffect {

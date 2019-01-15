@@ -18,7 +18,7 @@
     {{ Html::style('css/themes/default/default.css') }}
 @stop
 @section('slider')
-    @include('frontend.common.slider')
+    @include('frontend.common.slider2')
 @stop
 @section('container')
     @include('frontend.home.h_1')

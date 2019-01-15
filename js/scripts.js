@@ -1,7 +1,8 @@
 var plugins = {
     menuSideBar: $('.sidebar'),
     slider: $('#slider'),
-    sendMailContact:$('#h_1 #welcome .register button.submit-re'),
+    sendMailHomepage:$('#h_1 #welcome .register button.submit-re'),
+    sendMailContact:$('#c_1 button'),
 };
 
 
@@ -30,7 +31,7 @@ function openCity(evt, cityName) {
 }
 
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+// document.getElementById("defaultOpen").click();
 
 $(document).ready(function () {
 
@@ -79,7 +80,7 @@ $(document).ready(function () {
         }
     }
 
-    function runSendMailContact(){
+    function runSendMailHomepage(){
         $('#h_1 #welcome .register .button-group button.submit-re .loadingSending').css('display', 'inline-block');
         $('#h_1 #welcome .register .input-group input.input-text').removeClass('is-invalid');
         var data = new FormData($(this).get(0));
@@ -94,7 +95,7 @@ $(document).ready(function () {
         });
         $.ajax({
             type: "POST",
-            url: getBaseURL() + "sendmail/sendContact",
+            url: getBaseURL() + "sendmail/sendHomepage",
             dataType: 'json',
             processData: false,
             contentType: false,
@@ -130,6 +131,66 @@ $(document).ready(function () {
                     }
                 }
             }
+        });
+    }
+    function runSendMailContact(){
+        $('#c_1 button .loadingSending').css('display', 'inline-block');
+        $('#c_1 .input-group input.input-text').removeClass('is-invalid');
+        var data = new FormData($(this).get(0));
+        data.append('name', $("#c_1 .input-group input[name='name']").val());
+        data.append('phone', $("#c_1 .input-group input[name='phone']").val());
+        data.append('email', $("#c_1 .input-group input[name='email']").val());
+        data.append('title', $("#c_1 input[name='title']").val());
+        data.append('description', $("#c_1 textarea[name='description']").val());
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: getBaseURL() + "sendmail/sendContact",
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            data: data,
+            success: function (data) {
+                if (data.success) {
+                    $('#c_1 button .loadingSending').css('display', 'none');
+                    $('#c_1 button .successSending').css('display', 'inline-block');
+                    $('#c_1 button .successSending').fadeIn(500);
+                    $('#c_1 .button-group span').css('display', 'inline-block');
+                    $('#c_1.button-group span').fadeIn(500);
+                    setTimeout("$('#c_1 button .successSending').fadeOut(1500);", 3000);
+                    setTimeout("$('#c_1 .button-group span').fadeOut(1500);", 3000);
+                    $("#c_1 .input-group input[name='name']").val("");
+                    $("#c_1 .input-group input[name='email']").val("");
+                    $("#c_1 .input-group input[name='phone']").val("");
+                    $("#c_1 input[name='title']").val("");
+                    $("#c_1 textarea[name='description']").val("");
+                }
+                else {
+                    $('#c_1 button .loadingSending').css('display', 'none');
+                    var errors = data.validator;
+                    if (errors.hasOwnProperty('email')) {
+                        $('#c_1 .ip-email .input-text').addClass('is-invalid');
+                        $('#c_1 .ip-email .invalid-feedback').html(errors['email']);
+                    }
+                    if (errors.hasOwnProperty('name')) {
+                        $('#c_1 .ip-name .input-text').addClass('is-invalid');
+                        $('#c_1 .ip-name .invalid-feedback').html(errors['name']);
+                    }
+                    if (errors.hasOwnProperty('phone')) {
+                        $('#c_1 .ip-phone .input-text').addClass('is-invalid');
+                        $('#c_1 .ip-phone .invalid-feedback').html(errors['phone']);
+                    }
+                }
+            }
+        });
+    }
+    if (plugins.sendMailHomepage.length) {
+        plugins.sendMailHomepage.click(function () {
+            runSendMailHomepage();
         });
     }
     if (plugins.sendMailContact.length) {
