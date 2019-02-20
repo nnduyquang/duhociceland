@@ -29,7 +29,7 @@
             <h4>SEAA</h4>
             <h6>IRELANDOS THE BEST COLLEGES</h6>
         </div>
-        <img src="{{URL::asset('images/logo/logo.png')}}" alt="" style="width: 68px;height: auto">
+        <img src="{{URL::asset('images/logo/logo_ireland.png')}}" alt="" style="width: 68px;height: auto">
         <div class="ml-3 text-left">
             <h4>STUDY</h4>
             <h6>IN IRELAND</h6>

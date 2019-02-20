@@ -14,6 +14,7 @@
       padding-top: 60px;
       padding-bottom: 30px;
       border-radius: 3px;
+      box-shadow: -1px 4px 8px 0px #888888;
       img {
         position: absolute;
         left: 50%;
@@ -34,15 +35,17 @@
       }
     }
     .box.left {
-      background-color: #f7c052;
+      background-color: green;
       margin-top: 6px;
+      color: white;
     }
     .box.middle {
-      background-color: #34c663;
+      background-color: white;
       padding-top: 65px;
       padding-bottom: 38px;
       h5 {
         font-size: 30px;
+        color: black;
       }
       img {
         width: 98px;
@@ -50,7 +53,8 @@
       }
     }
     .box.right {
-      background-color: #e85342;
+      background-color: orange;
+      color: white;
       margin-top: 6px;
     }
   }

@@ -986,6 +986,8 @@ This class is added to the container
   padding-top: 60px;
   padding-bottom: 30px;
   border-radius: 3px;
+  -webkit-box-shadow: -1px 4px 8px 0px #888888;
+          box-shadow: -1px 4px 8px 0px #888888;
 }
 
 #h_1 #top .box img {
@@ -1010,18 +1012,20 @@ This class is added to the container
 }
 
 #h_1 #top .box.left {
-  background-color: #f7c052;
+  background-color: green;
   margin-top: 6px;
+  color: white;
 }
 
 #h_1 #top .box.middle {
-  background-color: #34c663;
+  background-color: white;
   padding-top: 65px;
   padding-bottom: 38px;
 }
 
 #h_1 #top .box.middle h5 {
   font-size: 30px;
+  color: black;
 }
 
 #h_1 #top .box.middle img {
@@ -1030,7 +1034,8 @@ This class is added to the container
 }
 
 #h_1 #top .box.right {
-  background-color: #e85342;
+  background-color: orange;
+  color: white;
   margin-top: 6px;
 }
 
@@ -1807,6 +1812,16 @@ This class is added to the container
 
 #au_1 ul {
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 575.98px) {
+  #au_1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  #au_1 h3 {
+    font-size: 15px;
+  }
 }
 
 #g_1 {

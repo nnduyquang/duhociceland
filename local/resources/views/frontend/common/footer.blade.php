@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6 mb-3">
                     <div class="d-flex align-items-center">
-                        <img class="footer-logo" src="{{URL::asset('images/logo/logo.png')}}" alt="">
+                        <img class="footer-logo" src="{{URL::asset('images/logo/logo_ireland.png')}}" alt="">
                         <p>© SEAA by Michael D Allen,</p>
                     </div>
                     <p>
