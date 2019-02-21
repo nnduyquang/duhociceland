@@ -19,6 +19,7 @@
 @stop
 @section('slider')
     @include('frontend.common.slider2')
+    @include('frontend.home.pop_up')
 @stop
 @section('container')
     @include('frontend.home.h_1')

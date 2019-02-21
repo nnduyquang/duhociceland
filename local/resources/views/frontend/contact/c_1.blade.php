@@ -17,6 +17,7 @@
                 <div class="info">
                     <i class="far fa-envelope"></i>
                     <p>{{$listFrontendCommon['email']}}</p>
+                    <p>michael@irelandos.com</p>
                 </div>
             </div>
             <div class="col-md-3 text-center mb-lg-0 mb-2">

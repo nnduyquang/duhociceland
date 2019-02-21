@@ -26,8 +26,8 @@
     </div>
     <div class="d-flex justify-content-center align-items-center pt-3 pb-3">
         <div class="mr-3 text-right">
-            <h4>SEAA</h4>
-            <h6>IRELANDOS THE BEST COLLEGES</h6>
+            <h4>IRELANDOS</h4>
+            <h6>THE BEST COLLEGES</h6>
         </div>
         <img src="{{URL::asset('images/logo/logo_ireland.png')}}" alt="" style="width: 68px;height: auto">
         <div class="ml-3 text-left">

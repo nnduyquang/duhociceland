@@ -202,6 +202,11 @@ $(document).ready(function () {
     if (plugins.slider.length) {
         runSlider();
     }
+    $('.btn-close').click(function () {
+        $('#popup-hera').css('display', 'none')
+    })
+
+
 
 
 
