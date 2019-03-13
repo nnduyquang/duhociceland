@@ -19,9 +19,9 @@
                                         <li>BY ADMIN</li>
                                     </ul>
                                 </div>
-                                <div class="pl-3 pr-3 pt-2 pb-2" style="margin-bottom: 50px">
+                                <div class="pl-3 pr-3 pt-2 pb-2 post-content" style="margin-bottom: 50px">
                                     <h4><a href="">{{$data['postBlog']->title}}</a></h4>
-                                    {!! $data['postBlog']->description !!}
+                                    {!! $data['postBlog']->content !!}
 
                                 </div>
 

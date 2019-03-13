@@ -2550,6 +2550,10 @@ This class is added to the container
   top: -1px;
 }
 
+#bd_1 .post-content {
+  line-height: 1.8;
+}
+
 #bd_1 h4 {
   font-weight: bold;
   margin-bottom: 10px;
