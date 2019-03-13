@@ -118,6 +118,25 @@ class FrontendRepository implements FrontendRepositoryInterface
         return $data;
     }
 
+    public function getBlogDetail($path)
+    {
+        $data = [];
+        $category = new CategoryItem();
+        $post=new Post();
+        $homeOurServicesCategory = $category->getCategoryByTranslationId(23);
+        $homePostOurServicesCategory = $category->getAllPostCategoryByTranslationId(23);
+        foreach ($homePostOurServicesCategory as $key => $item) {
+            $item->description = loai_bo_html_tag($item->description);
+        }
+        $homeOurServicesCategory->description = loai_bo_html_tag($homeOurServicesCategory->description);
+        $postBlog=$post->getPostByPath($path);
+        $data['homeOurServicesCategory'] = $homeOurServicesCategory;
+        $data['homePostOurServicesCategory'] = $homePostOurServicesCategory;
+        $data['postBlog']=$postBlog;
+        return $data;
+    }
+
+
     public function getServices()
     {
         $data = [];

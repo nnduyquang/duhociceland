@@ -6,6 +6,7 @@ Route::group(['middleware' => 'locale'], function() {
     Route::get('/contact.html', 'FrontendController@getContact')->name('homepage');
     Route::get('/about-us.html', 'FrontendController@getAboutUs')->name('aboutus');
     Route::get('/blogs.html','FrontendController@getBlogs')->name('blogs');
+    Route::get('/blogs/{path}', 'FrontendController@getBlogDetail');
     Route::get('/services.html', 'FrontendController@getServices');
     Route::get('/services/{path}', 'FrontendController@getServicesDetail');
     Route::post('/sendmail/sendHomepage', ['as' => 'mail.sendmailHomepage', 'uses' => 'MailController@sendMailHomepage']);

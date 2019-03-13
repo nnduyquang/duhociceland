@@ -13,6 +13,8 @@ interface FrontendRepositoryInterface
 
     public function getBlogs();
 
+    public function getBlogDetail($path);
+
     public function getServices();
 
     public function getServicesDetail($path);

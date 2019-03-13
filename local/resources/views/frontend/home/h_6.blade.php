@@ -22,8 +22,8 @@
                     </div>
                     <div class="sub-blog col-md-6">
                         @foreach($data['homePostOurLatestBlogsCategory'] as $key=>$item)
-                            @if($key>=$count&&$key<5)
-                                <div class="mb-3 pb-3 d-flex align-items-center border-bottom border-light">
+                            @if($key>=$count&&$key<6)
+                                <div class="mb-3 pb-3 d-flex align-items-center border-bottom">
                                     <div class="pr-2 float-left">
                                         <a href="{{URL::to('blogs/'.$item->path)}}">
                                             <div class="img-sub-blogs"
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="col-12 text-center">
-                <button class="view-all">@lang('content.home_viewall')</button>
+                <a href="{{URL::to('blogs.html')}}"><button class="view-all">@lang('content.home_viewall')</button></a>
             </div>
 
         </div>

@@ -39,6 +39,10 @@ class FrontendController extends Controller
         $data = $this->frontendRepository->getServicesDetail($path);
         return view('frontend.service-detail.index', compact('data'));
     }
+    public function getBlogDetail($path){
+        $data = $this->frontendRepository->getBlogDetail($path);
+        return view('frontend.blog-details.index', compact('data'));
+    }
     public function changeLanguage($language)
     {
 
