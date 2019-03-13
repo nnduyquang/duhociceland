@@ -1464,6 +1464,143 @@ This class is added to the container
   cursor: pointer;
 }
 
+#h_6 h5 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  overflow-x: hidden;
+  border-bottom: 2px solid #09c709;
+  color: green;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+#h_6 #main-contain {
+  background-color: white;
+}
+
+#h_6 #main-contain .no-content {
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  width: 100%;
+}
+
+#h_6 #main-contain .main-blog img {
+  width: 100%;
+  height: auto;
+  border: 4px solid #f2f5f5;
+}
+
+#h_6 #main-contain .main-blog h3 {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+#h_6 #main-contain .main-blog h3 a {
+  color: #004085;
+}
+
+#h_6 #main-contain .main-blog p {
+  font-size: 16px;
+  max-height: 40px;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#h_6 #main-contain .sub-blog .img-sub-blogs {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 76px;
+  height: 58px;
+}
+
+#h_6 #main-contain .sub-blog p {
+  font-size: 16px;
+  max-height: 40px;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#h_6 #main-contain .sub-blog p a {
+  color: #4f5151;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: 16px;
+}
+
+#h_6 #main-contain .detail-blog {
+  padding-bottom: 20px;
+}
+
+#h_6 #main-contain .detail-blog .one-item:first-child {
+  border-top: 4px solid #019934 !important;
+  padding-top: 20px;
+}
+
+#h_6 #main-contain .detail-blog .one-item a .img-detail-blogs {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 186px;
+  height: 138px;
+  margin-right: 8px;
+}
+
+#h_6 #main-contain .detail-blog .one-item h4 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+#h_6 #main-contain .detail-blog .one-item h4 a {
+  color: #004085;
+}
+
+#h_6 #main-contain .detail-blog .one-item p {
+  font-size: 16px;
+  max-height: 40px;
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#h_6 #main-contain .detail-blog .one-item p.time {
+  font-size: 15px;
+  height: -webkit-fit-content !important;
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  margin-bottom: 6px;
+}
+
+#h_6 #main-contain .detail-blog .one-item p.time span {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#h_6 .view-all {
+  margin-top: 26px;
+  margin-bottom: 20px;
+  background-color: #f6af05;
+  padding: 12px 20px;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 #popup-hera {
   width: 100%;
   height: 100%;
