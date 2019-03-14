@@ -24,7 +24,7 @@
     @include('frontend.about-us.au_1')
     @include('frontend.home.h_3')
     @include('frontend.common.support')
-    @include('frontend.home.h_5')
+    @include('frontend.home.h_6')
     @include('frontend.common.scub-email')
 @stop
 @section('jv-scripts')

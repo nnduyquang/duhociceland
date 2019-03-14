@@ -23,7 +23,7 @@
 @section('container')
     @include('frontend.service-detail.sd_1')
     @include('frontend.common.support')
-    @include('frontend.home.h_5')
+    @include('frontend.home.h_6')
     @include('frontend.common.scub-email')
 @stop
 @section('jv-scripts')
