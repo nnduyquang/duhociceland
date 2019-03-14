@@ -30,5 +30,7 @@ return [
     'contact_form_phone'=>'Your phone here',
     'contact_form_email'=>'Your email here',
     'contact_form_message'=>'Your message here...!',
-    'contact_form_send'=>'Send Info'
+    'contact_form_send'=>'Send Info',
+    'footer_categories'=>'Categories',
+    'footer_description'=>'IrelandOs provides services to the international higher education community to help institutional leaders meet their recruitment and campus internationalization goals'
 ];

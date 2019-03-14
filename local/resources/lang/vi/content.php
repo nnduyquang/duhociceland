@@ -30,5 +30,7 @@ return [
     'contact_form_phone'=>'Số điện thoại',
     'contact_form_email'=>'Email',
     'contact_form_message'=>'Nội dung',
-    'contact_form_send'=>'Gửi'
+    'contact_form_send'=>'Gửi',
+    'footer_categories'=>'Danh Mục',
+    'footer_description'=>'IrelandOs cũng cung cấp các dịch vụ  giáo dục quốc tế bậc cao để hỗ trợ các nhà lãnh đạo tổ chức trongcác mục tiêu tuyển dụng và đào tạo quốc tế.'
 ];

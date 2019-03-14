@@ -6,18 +6,16 @@
                 <div class="col-md-3 col-sm-6 mb-3">
                     <div class="d-flex align-items-center">
                         <img class="footer-logo" src="{{URL::asset('images/logo/logo_ireland.png')}}" alt="">
-                        <p>© SEAA by Michael D Allen,</p>
+                        <p>© IrelandOs by Michael D Allen,</p>
                     </div>
                     <p>
-                        Overseas Study Agent.
-                        proudly promoting Ireland as a first-class study destination for Vietnamese and Thai
-                        students</p>
+                        @lang('content.footer_description')</p>
 
                     <ul>
                         <li>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <p><span class="text-primary">Address:</span> {{loai_bo_html_tag($listFrontendCommon['contact'])}}</p>
+                                <p><span class="text-primary">@lang('content.contact_address'):</span> {{loai_bo_html_tag($listFrontendCommon['contact'])}}</p>
                             </div>
                         <li>
                             <div class="d-flex align-items-center">
@@ -28,7 +26,7 @@
                         <li>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-phone-square"></i>
-                                <p><span class="text-primary">Tel:</span>  {{$listFrontendCommon['config-phone-1']}}</p>
+                                <p><span class="text-primary">Hotline:</span>  {{$listFrontendCommon['config-phone-1']}}</p>
                             </div>
                         </li>
                         <li>
@@ -41,16 +39,17 @@
                     </ul>
                 </div>
                 <div class="col-md-2 col-sm-6 mb-3">
-                    <h4>USEFUL LINK</h4>
+
+                    <h4>@lang('content.footer_categories')</h4>
                     <ul>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">F.A.Q</a></li>
-                        <li><a href="">Gallery</a></li>
-                        <li><a href="">Blog</a></li>
+                        <li><a href="{{URL::to('about-us.html')}}">@lang('content.menu_aboutus')</a></li>
+                        <li><a href="{{URL::to('services.html')}}">@lang('content.menu_services')</a></li>
+                        <li><a href="{{URL::to('blogs.html')}}">@lang('content.menu_blog')</a></li>
+                        <li><a href="{{URL::to('contact.html')}}">@lang('content.menu_contact')</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-3 blog">
-                    <h4>SERVICES</h4>
+                    <h4>@lang('content.menu_services')</h4>
                     <ul>
                         @foreach($listFrontendCommon['homePostOurServicesCategory'] as $key=>$item)
 
