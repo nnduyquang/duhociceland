@@ -2099,6 +2099,7 @@ This class is added to the container
 #au_1 {
   padding-top: 50px;
   padding-bottom: 50px;
+  line-height: 2;
 }
 
 #au_1 h3 {

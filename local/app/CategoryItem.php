@@ -148,7 +148,7 @@ class CategoryItem extends Model
     public function getAllPostCategoryByTranslationId($translationId)
     {
         $locale_id = self::getLanguage();
-        return $this->where('translation_id', $translationId)->where('locale_id', $locale_id)->first()->posts()->get();
+        return $this->where('translation_id', $translationId)->where('locale_id', $locale_id)->first()->posts()->orderBy('created_at','DESC')->get();
     }
 
 

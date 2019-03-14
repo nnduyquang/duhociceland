@@ -15,16 +15,16 @@
                                     </div>
                                     <div class="p-2">
                                         <ul class="post-info">
-                                            <li>15TH, MARCH, 2012</li>
+                                            <li>{{$item->created_at}}</li>
                                             <li>BY ADMIN</li>
                                         </ul>
                                     </div>
                                     <div class="p-2">
-                                        <h4><a href="{{URL::asset('details.html')}}">{{$item->title}}</a></h4>
+                                        <h4><a href="{{URL::to('blogs/'.$item->path)}}">{{$item->title}}</a></h4>
                                         <p>{{$item->description}}</p>
                                     </div>
                                     <div class="p-2 text-right mt-3 mb-3">
-                                        <a class="read-more" href="{{URL::asset('details.html')}}">@lang('content.blog_readmore') <i
+                                        <a class="read-more" href="{{URL::to('blogs/'.$item->path)}}">@lang('content.blog_readmore') <i
                                                     class="fas fa-long-arrow-alt-right"></i></a>
                                     </div>
                                 </div>

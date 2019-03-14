@@ -27,11 +27,11 @@
             </div>
         </div>
 
-        <h6>TAGS</h6>
+        {{--<h6>TAGS</h6>--}}
 
-        @for ($i = 0; $i < 8; $i++)
-            <div class="tags"><a href="">Tags {{$i}}.</a></div>
-        @endfor
+        {{--@for ($i = 0; $i < 8; $i++)--}}
+            {{--<div class="tags"><a href="">Tags {{$i}}.</a></div>--}}
+        {{--@endfor--}}
 
 
     </div>
