@@ -3,6 +3,7 @@ var plugins = {
     slider: $('#slider'),
     sendMailHomepage:$('#h_1 #welcome .register button.submit-re'),
     sendMailContact:$('#c_1 button'),
+    sendMailPopup:$('.pop-center button.submit-re')
 };
 
 
@@ -188,11 +189,70 @@ $(document).ready(function () {
             }
         });
     }
+    function runSendMailPopup(){
+        $('.pop-center button .loadingSending').css('display', 'inline-block');
+        $('.pop-center .input-group input.input-text').removeClass('is-invalid');
+        var data = new FormData($(this).get(0));
+        data.append('name', $(".pop-center .input-group input[name='name']").val());
+        data.append('phone', $(".pop-center .input-group input[name='phone']").val());
+        data.append('email', $(".pop-center .input-group input[name='email']").val());
+        data.append('description', $(".pop-center textarea[name='description']").val());
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: getBaseURL() + "sendmail/sendHomepage",
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            data: data,
+            success: function (data) {
+                if (data.success) {
+                    $('.pop-center button .loadingSending').css('display', 'none');
+                    $('.pop-center button .successSending').css('display', 'inline-block');
+                    $('.pop-center button .successSending').fadeIn(500);
+                    $('.pop-center .button-group span').css('display', 'inline-block');
+                    $('.pop-center.button-group span').fadeIn(500);
+                    setTimeout("$('.pop-center button .successSending').fadeOut(1500);", 3000);
+                    setTimeout("$('.pop-center .button-group span').fadeOut(1500);", 3000);
+                    $(".pop-center .input-group input[name='name']").val("");
+                    $(".pop-center .input-group input[name='email']").val("");
+                    $(".pop-center .input-group input[name='phone']").val("");
+                    $(".pop-center textarea[name='description']").val("");
+                }
+                else {
+                    $('.pop-center button .loadingSending').css('display', 'none');
+                    var errors = data.validator;
+                    if (errors.hasOwnProperty('email')) {
+                        $('.pop-center .ip-email .input-text').addClass('is-invalid');
+                        $('.pop-center .ip-email .invalid-feedback').html(errors['email']);
+                    }
+                    if (errors.hasOwnProperty('name')) {
+                        $('.pop-center .ip-name .input-text').addClass('is-invalid');
+                        $('#c_1 .ip-name .invalid-feedback').html(errors['name']);
+                    }
+                    if (errors.hasOwnProperty('phone')) {
+                        $('.pop-center .ip-phone .input-text').addClass('is-invalid');
+                        $('.pop-center .ip-phone .invalid-feedback').html(errors['phone']);
+                    }
+                }
+            }
+        });
+    }
     if (plugins.sendMailHomepage.length) {
         plugins.sendMailHomepage.click(function () {
             runSendMailHomepage();
         });
     }
+    if (plugins.sendMailPopup.length) {
+        plugins.sendMailPopup.click(function () {
+            runSendMailPopup();
+        });
+    }
+
     if (plugins.sendMailContact.length) {
         plugins.sendMailContact.click(function () {
             runSendMailContact();
