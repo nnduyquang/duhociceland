@@ -232,7 +232,7 @@ $(document).ready(function () {
                     }
                     if (errors.hasOwnProperty('name')) {
                         $('.pop-center .ip-name .input-text').addClass('is-invalid');
-                        $('#c_1 .ip-name .invalid-feedback').html(errors['name']);
+                        $('.pop-center .ip-name .invalid-feedback').html(errors['name']);
                     }
                     if (errors.hasOwnProperty('phone')) {
                         $('.pop-center .ip-phone .input-text').addClass('is-invalid');
