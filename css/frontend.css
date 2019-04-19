@@ -1992,7 +1992,7 @@ This class is added to the container
 #banner-title h4 {
   font-size: 38px;
   font-weight: bold;
-  color: white;
+  color: #529c4d;
 }
 
 #banner-title ul {
@@ -2008,6 +2008,7 @@ This class is added to the container
 #banner-title ul li a {
   color: white;
   position: relative;
+  color: #f58634;
 }
 
 #banner-title ul li:not(:last-child) a {
@@ -2309,9 +2310,12 @@ This class is added to the container
 
 #s_1 .info h4 {
   font-size: 18px;
-  color: #004085;
   font-weight: bold;
   margin-bottom: 16px;
+}
+
+#s_1 .info h4 a {
+  color: #529c4d;
 }
 
 #s_1 .info p {
