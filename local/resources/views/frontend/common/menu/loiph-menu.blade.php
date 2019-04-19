@@ -5,17 +5,15 @@
             <div class="d-flex">
                 <div class="d-flex align-items-center mr-3">
                     <i class="fas fa-phone-square"></i>
-                    <p>{{$listFrontendCommon['config-phone-1']}}</p>
+                    <p><a href="tel:{{$listFrontendCommon['hotline']}}">{{$listFrontendCommon['config-phone-1']}}</a></p>
                 </div>
                 <div class="d-lg-flex d-sm-none d-none align-items-center">
                     <i class="fas fa-globe-americas"></i>
-                    <p> {{$listFrontendCommon['email']}}</p>
+                    <p><a href="mailto:{{$listFrontendCommon['email']}}"> {{$listFrontendCommon['email']}}</a></p>
                 </div>
             </div>
             <div class="sc-nw">
                 <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-google-plus-g"></i></a>
                 <a href=""></a>
                 <a href="{{ route('user.change-language', ['language'=>'en'])}}"><img src="{{URL::to('images/icon/ie.png')}}" alt=""
                                 style="width: 22px;height: auto;margin: auto"></a>
@@ -47,14 +45,14 @@
                 {{--<li><a href="{{URL::asset('/blogs.html')}}">BLOG</a></li>--}}
                 {{--<li><a href="{{URL::asset('/contact.html')}}">CONTACT</a></li>--}}
                 {{--<li><a href="{{URL::asset('/aboutus.html')}}">ABOUT US</a></li>--}}
-                <li>
-                    <div class="search d-flex align-items-center">
-                        <input type="text">
-                        <button>
-                        <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </li>
+                {{--<li>--}}
+                    {{--<div class="search d-flex align-items-center">--}}
+                        {{--<input type="text">--}}
+                        {{--<button>--}}
+                        {{--<i class="fas fa-search"></i>--}}
+                        {{--</button>--}}
+                    {{--</div>--}}
+                {{--</li>--}}
             </ul>
         </div>
         <div class="container mobile-menu d-lg-none d-md-none d-flex justify-content-between align-items-center">

@@ -5,11 +5,11 @@
                 <h5>@lang('content.home_ourstudentgallery')</h5>
                 {{--<p>In this example, we use JavaScript to "click" on the London button, to open the tab on page load.</p>--}}
 
-                <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'All')" id="defaultOpen">All</button>
+                {{--<div class="tab">--}}
+                    {{--<button class="tablinks" onclick="openCity(event, 'All')" id="defaultOpen">All</button>--}}
                     {{--<button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>--}}
                     {{--<button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>--}}
-                </div>
+                {{--</div>--}}
                 <div id="All" class="tabcontent active show ">
                     <div class="row">
 

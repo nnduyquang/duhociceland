@@ -20,17 +20,8 @@
                         <div class="p-3 info">
                             <h4><a href="{{URL::to('services/'.$item->path)}}">{{$item->title}}</a></h4>
                             <p>{{$item->description}}</p>
-                        </div>
-                        <div class="footer p-3 d-flex justify-content-between">
-                            <div>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <div class="">
-                                <a href="{{URL::to('services/'.$item->path)}}">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+                            <div style="text-align: right">
+                                <a style="color: #f58634" href="{{URL::to('services/'.$item->path)}}">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                         </div>
                     </div>

@@ -4,8 +4,8 @@
     font-weight: bold;
     margin-bottom: 20px;
     overflow-x: hidden;
-    border-bottom: 2px solid #09c709;
-    color: green;
+    border-bottom: 2px solid $main-color-sub;
+    color: $main-color;
     padding-bottom: 5px;
     width: 100%;
   }
@@ -29,7 +29,7 @@
         margin-bottom: 8px;
         margin-top: 5px;
         a {
-          color: #004085;
+          color: $main-color;
         }
       }
       p {
@@ -116,11 +116,12 @@
   .view-all{
     margin-top: 26px;
     margin-bottom: 20px;
-    background-color: #f6af05;
+    background-color: $sub-color-2;
     padding: 12px 20px;
     border: none;
     font-size: 12px;
     font-weight: bold;
     cursor: pointer;
+    color: white;
   }
 }

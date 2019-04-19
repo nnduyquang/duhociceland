@@ -5,35 +5,33 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6 mb-3">
                     <div class="d-flex align-items-center">
-                        <img class="footer-logo" src="{{URL::asset('images/logo/logo_ireland.png')}}" alt="">
-                        <p>© IrelandOs by Michael D Allen,</p>
+                        <img class="footer-logo" src="{{URL::asset('images/logo/logo_ireland_white.png')}}" alt="">
+                        <p>© IrelandOs</p>
                     </div>
                     <p>
                         @lang('content.footer_description')</p>
 
-                    <ul>
+                    <ul class="info">
                         <li>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <p><span class="text-primary">@lang('content.contact_address'):</span> {{loai_bo_html_tag($listFrontendCommon['contact'])}}</p>
+                                <p><span class="span-title">@lang('content.contact_address'):</span> {{loai_bo_html_tag($listFrontendCommon['contact'])}}</p>
                             </div>
                         <li>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-globe-americas"></i>
-                                <p><span class="text-primary">Email:</span> {{$listFrontendCommon['email']}}</p>
+                                <p><span class="span-title">Email:</span> {{$listFrontendCommon['email']}}</p>
                             </div>
                         </li>
                         <li>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-phone-square"></i>
-                                <p><span class="text-primary">Hotline:</span>  {{$listFrontendCommon['config-phone-1']}}</p>
+                                <p><span class="span-title">Hotline:</span>  {{$listFrontendCommon['config-phone-1']}}</p>
                             </div>
                         </li>
                         <li>
                             <div class="sc-nw">
                                 <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-google-plus-g"></i></a>
                             </div>
                         </li>
                     </ul>

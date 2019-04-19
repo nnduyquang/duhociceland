@@ -21,7 +21,7 @@
                         <p>{{$item->title}}</p>
                     </div>
                     <div>
-                        <div  class="border" style="background-color:#e6502e;">
+                        <div  class="border" style="background-color:#529c4d;">
                             <img src="{{URL::to($item->image)}}" alt="">
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <div class="d-flex align-items-center wcu-item  wow fadeInRight"
                              data-wow-delay="{{$wow_delay}}ms">
                     <div>
-                        <div  class="border" style="background-color:#ffca00;">
+                        <div  class="border" style="background-color:#f58634;">
                             <img src="{{URL::to($item->image)}}" alt="">
                         </div>
                     </div>

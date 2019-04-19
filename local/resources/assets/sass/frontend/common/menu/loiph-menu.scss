@@ -1,6 +1,6 @@
 #loiph-menu{
  .top-info{
-   background-color: green;
+   background-color: $main-color;
    padding-top: 10px;
    padding-bottom: 10px;
    i{
@@ -8,13 +8,14 @@
      margin-right: 6px;
    }
    p{
-     color: white;
      font-size: 14px;
+     a{
+       color: white;
+     }
    }
  }
   h4{
     font-size: 25px;
-    font-family: 'Vollkorn SC', serif;
     font-weight: bold;
   }
   h6{
@@ -32,7 +33,6 @@
           font-size: 17px;
           padding: 20px 12px;
           color: #1b1e21;
-          font-family: 'Vollkorn SC', serif;
           transition: .6s;
           box-sizing: border-box;
           border-bottom: 2px solid white;
@@ -72,7 +72,6 @@
         color: #004085;
       }
       span{
-        font-family: 'Vollkorn SC', serif;
         font-size: 20px;
         font-weight: bold;
       }

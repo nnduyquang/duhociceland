@@ -6,7 +6,7 @@
                 <p>@lang('content.home_weareprovide')</p>
             </div>
             <div class="">
-                <button><a href="{{URL::to('contact.html')}}">@lang('content.home_getsupport') <i class="pl-2 fas fa-long-arrow-alt-right"></i></a></button>
+                <button><a style="color: white;font-weight: bolder" href="{{URL::to('contact.html')}}">@lang('content.home_getsupport') <i class="pl-2 fas fa-long-arrow-alt-right"></i></a></button>
             </div>
         </div>
     </div>

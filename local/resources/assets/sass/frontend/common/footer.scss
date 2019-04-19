@@ -7,11 +7,15 @@
    background-size: cover;
    background-repeat: no-repeat;
    min-height: 100px;
+   ul.info{
+     span.span-title{
+       color: $main-color;
+     }
+   }
    h4{
-     color: white;
+     color: $sub-color-2;
      font-size: 19px;
      font-weight: bold;
-     font-family: 'Vollkorn SC', serif;
    }
    .footer-logo{
      width: 70px;
