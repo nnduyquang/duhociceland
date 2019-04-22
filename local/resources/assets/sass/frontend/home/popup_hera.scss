@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 101;
   overflow: hidden;
   text-align: center;
   .popup-content {
@@ -33,7 +33,7 @@
         background-color: rgba(255, 255, 255, 0.73);
         padding: 25px;
         h4 {
-          color: #004085;
+          color: $main-color;
           font-weight: bold;
           font-size: 25px;
           text-align: left;
@@ -79,20 +79,22 @@
               width: 90%;
               padding: 10px;
               text-align: center;
-              background-color: #fff;
+              background-color: $sub-color-2;
               border-radius: 3px;
               border: none;
               cursor: pointer;
               margin-top: 10px;
               margin-bottom: 38px;
               transition: 0.2s all;
+              color: white;
+              font-weight: bolder;
               &:hover{
-                background-color: green;
+                background-color: $main-color;
                 color: white;
               }
             }
             h4 {
-              color: green;
+              color: $main-color;
               font-weight: bold;
               font-size: 22px;
               padding-top: 26px;
@@ -139,6 +141,9 @@
   #popup-hera .popup-content .pop-center {
     width: 90%;
     background-position: inherit;
+    .one-item{
+      padding: 0;
+    }
   }
   #popup-hera .popup-content .pop-center .one-item h4 {
     text-align: center;

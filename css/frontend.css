@@ -1608,7 +1608,7 @@ This class is added to the container
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 101;
   overflow: hidden;
   text-align: center;
 }
@@ -1644,7 +1644,7 @@ This class is added to the container
 }
 
 #popup-hera .popup-content .pop-center .one-item h4 {
-  color: #004085;
+  color: #529c4d;
   font-weight: bold;
   font-size: 25px;
   text-align: left;
@@ -1700,7 +1700,7 @@ This class is added to the container
   width: 90%;
   padding: 10px;
   text-align: center;
-  background-color: #fff;
+  background-color: #f58634;
   border-radius: 3px;
   border: none;
   cursor: pointer;
@@ -1708,15 +1708,17 @@ This class is added to the container
   margin-bottom: 38px;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+  color: white;
+  font-weight: bolder;
 }
 
 #popup-hera .popup-content .pop-center .one-item .register .content button.submit-re:hover {
-  background-color: green;
+  background-color: #529c4d;
   color: white;
 }
 
 #popup-hera .popup-content .pop-center .one-item .register .content h4 {
-  color: green;
+  color: #529c4d;
   font-weight: bold;
   font-size: 22px;
   padding-top: 26px;
@@ -1761,6 +1763,9 @@ This class is added to the container
   #popup-hera .popup-content .pop-center {
     width: 90%;
     background-position: inherit;
+  }
+  #popup-hera .popup-content .pop-center .one-item {
+    padding: 0;
   }
   #popup-hera .popup-content .pop-center .one-item h4 {
     text-align: center;
