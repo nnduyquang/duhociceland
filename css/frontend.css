@@ -680,11 +680,12 @@ This class is added to the container
 #loiph-menu h4 {
   font-size: 25px;
   font-weight: bold;
+  color: #529c4d;
 }
 
 #loiph-menu h6 {
   font-size: 12px;
-  color: #6f6f6f;
+  color: #f58634;
 }
 
 #loiph-menu .main-menu {
@@ -718,10 +719,10 @@ This class is added to the container
 }
 
 #loiph-menu .main-menu ul li a:hover {
-  background-color: #0062cc;
+  background-color: #529c4d;
   color: white;
-  border-bottom: 2px solid #0062cc;
-  border-top: 2px solid #0062cc;
+  border-bottom: 2px solid #f58634;
+  border-top: 2px solid #f58634;
 }
 
 #loiph-menu .main-menu ul li .search {
@@ -885,6 +886,54 @@ This class is added to the container
   }
   .slider h6 {
     width: 90%;
+  }
+}
+
+#slider2 {
+  position: relative;
+}
+
+#slider2 .blink_text {
+  position: absolute;
+  z-index: 100;
+  top: 20%;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  color: #529c4d;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 18px;
+  -webkit-animation: blinker 2.5s linear infinite;
+          animation: blinker 2.5s linear infinite;
+}
+
+@-webkit-keyframes blinker {
+  from {
+    color: #529c4d;
+    -webkit-transform: scale(0.5) rotate(-30deg);
+            transform: scale(0.5) rotate(-30deg);
+    opacity: 0;
+  }
+  to {
+    color: #f58634;
+    -webkit-transform: scale(1) rotate(-30deg);
+            transform: scale(1) rotate(-30deg);
+    opacity: 1;
+  }
+}
+
+@keyframes blinker {
+  from {
+    color: #529c4d;
+    -webkit-transform: scale(0.5) rotate(-30deg);
+            transform: scale(0.5) rotate(-30deg);
+    opacity: 0;
+  }
+  to {
+    color: #f58634;
+    -webkit-transform: scale(1) rotate(-30deg);
+            transform: scale(1) rotate(-30deg);
+    opacity: 1;
   }
 }
 
@@ -2570,4 +2619,52 @@ This class is added to the container
   padding: 8px 12px;
   font-size: 12px;
   border-radius: 3px;
+}
+
+.box-contact {
+  width: 98px;
+  position: fixed;
+  top: 94px;
+  right: 0;
+  z-index: 999;
+}
+
+.box-contact .box-style {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #f58634;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.box-contact .box-style a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #529c4d;
+  width: 100%;
+  height: 100%;
+}
+
+.box-contact .box-style:hover {
+  background-color: #f58634;
+  border: 1px solid #529c4d;
+}
+
+.box-contact .box-style:hover a {
+  color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  .box-contact {
+    display: none;
+  }
 }

@@ -1,4 +1,7 @@
 <div id="slider2">
+    <div class="blink_text">
+        <span>No Customer Service Fee</span>
+    </div>
     <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">

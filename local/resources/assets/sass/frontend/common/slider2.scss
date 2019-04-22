@@ -1,4 +1,31 @@
 #slider2 {
+  position: relative;
+  .blink_text{
+    position: absolute;
+    z-index: 100;
+    top:20%;
+    transform: rotate(-30deg);
+    color: $main-color;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 18px;
+    animation: blinker 2.5s linear infinite;
+  }
+  @keyframes blinker {
+    //50% {
+    //  opacity: 0;
+    //}
+    from{
+      color: $main-color;
+      transform: scale(0.5) rotate(-30deg);
+      opacity: 0;
+    }
+    to{
+      color: $sub-color-2;
+      transform: scale(1) rotate(-30deg);
+      opacity: 1;
+    }
+  }
   .img-content {
     background-position: center center;
     background-size: cover;

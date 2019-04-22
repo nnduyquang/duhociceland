@@ -14,8 +14,8 @@
     <meta property="og:url" content="@yield('url-og')"/>
     <meta property="og:image" content="@yield('image-og')"/>
     <meta property="og:description" content="@yield('description')"/>
-    <link rel="shortcut icon" href="{{URL::asset('images/icon/favicon-16x16.png')}}" type="image/x-icon">
-    <link rel="icon" href="{{URL::asset('images/icon/favicon-16x16.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{URL::asset('images/icon/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{URL::asset('images/icon/favicon.ico')}}" type="image/x-icon">
     {{--<meta property="og:site_name" content="Site Name, i.e. Moz" />--}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     {{ Html::style('css/core.common.css') }}
@@ -34,6 +34,7 @@
     @include('frontend.common.menu.loiph-m-menu')
     @yield('slider')
     @yield('container')
+    @include('frontend.common.box-contact')
 </div>
 {{--@include('frontend.common.menu.m-sidebar')--}}
 <div class="footer">
