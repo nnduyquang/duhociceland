@@ -11,6 +11,18 @@
     border-radius: 8px;
     margin-bottom: 20px;
     transition: 0.2s all;
+    position: relative;
+    .phone-number{
+      position: absolute;
+      display: none;
+      left: -149px;
+      top: 4px;
+      padding: 10px;
+      background-color: $main-color;
+      border-radius: 18px;
+      color: white;
+      font-weight: bolder;
+    }
     a{
       display: flex;
       justify-content: center;
@@ -22,6 +34,9 @@
     &:hover{
       background-color: $sub-color-2;
       border: 1px solid $main-color;
+      .phone-number{
+        display: block;
+      }
       a{
         color: white;
       }

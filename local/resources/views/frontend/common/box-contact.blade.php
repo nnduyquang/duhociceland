@@ -6,7 +6,13 @@
         <a href="{{URL::to('contact.html')}}"><i class="fas fa-map-marked-alt"></i></a>
     </div>
     <div class="box-style">
-        <a href="tel:{{$listFrontendCommon['hotline']}}"><i class="fas fa-phone"></i></a>
+        <a href="#"><i class="fas fa-phone"></i></a>
+        <div class="phone-number">
+            +84 856.465.607
+        </div>
+    </div>
+    <div class="box-style">
+        <a href="mailto:{{$listFrontendCommon['email']}}""><i class="fas fa-envelope"></i></a>
     </div>
 
 </div>

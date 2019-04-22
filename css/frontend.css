@@ -2637,6 +2637,19 @@ This class is added to the container
   margin-bottom: 20px;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+  position: relative;
+}
+
+.box-contact .box-style .phone-number {
+  position: absolute;
+  display: none;
+  left: -149px;
+  top: 4px;
+  padding: 10px;
+  background-color: #529c4d;
+  border-radius: 18px;
+  color: white;
+  font-weight: bolder;
 }
 
 .box-contact .box-style a {
@@ -2657,6 +2670,10 @@ This class is added to the container
 .box-contact .box-style:hover {
   background-color: #f58634;
   border: 1px solid #529c4d;
+}
+
+.box-contact .box-style:hover .phone-number {
+  display: block;
 }
 
 .box-contact .box-style:hover a {
