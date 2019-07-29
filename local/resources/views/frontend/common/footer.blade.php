@@ -31,7 +31,7 @@
                         </li>
                         <li>
                             <div class="sc-nw">
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a target="_blank" href="http://www.facebook.com/irelandos"><i class="fab fa-facebook-f"></i></a>
                             </div>
                         </li>
                     </ul>

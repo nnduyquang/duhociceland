@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="sc-nw">
-                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="http://www.facebook.com/irelandos"><i class="fab fa-facebook-f"></i></a>
                 <a href=""></a>
                 <a href="{{ route('user.change-language', ['language'=>'en'])}}"><img src="{{URL::to('images/icon/ie.png')}}" alt=""
                                 style="width: 22px;height: auto;margin: auto"></a>

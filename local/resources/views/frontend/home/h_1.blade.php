@@ -7,29 +7,35 @@
             @foreach($data['homeTop'] as $key=>$item)
                 @if($count==0)
                     <div class="col-md-4 p-0">
-                        <div class="box left">
-                            <img src="{{URL::to($item->image)}}" alt="">
-                            <h5>{{$item->title}}</h5>
-                            <p>{{$item->description}}</p>
-                        </div>
+                        <a target="_blank" href="{!! loai_bo_html_tag($item->content) !!}">
+                            <div class="box left">
+                                <img src="{{URL::to($item->image)}}" alt="">
+                                <h5>{{$item->title}}</h5>
+                                <p>{{$item->description}}</p>
+                            </div>
+                        </a>
                     </div>
                 @endif
                 @if($count==1)
                     <div class="col-md-4 p-0">
-                        <div class="box middle">
-                            <img src="{{URL::to($item->image)}}" alt="">
-                            <h5>{{$item->title}}</h5>
-                            <p>{{$item->description}}</p>
-                        </div>
+                        <a target="_blank" href="{!! loai_bo_html_tag($item->content) !!}">
+                            <div class="box middle">
+                                <img src="{{URL::to($item->image)}}" alt="">
+                                <h5>{{$item->title}}</h5>
+                                <p>{{$item->description}}</p>
+                            </div>
+                        </a>
                     </div>
                 @endif
                 @if($count==2)
                     <div class="col-md-4 p-0">
-                        <div class="box right">
-                            <img src="{{URL::to($item->image)}}" alt="">
-                            <h5>{{$item->title}}</h5>
-                            <p>{{$item->description}}</p>
-                        </div>
+                        <a target="_blank" href="{!! loai_bo_html_tag($item->content) !!}">
+                            <div class="box right">
+                                <img src="{{URL::to($item->image)}}" alt="">
+                                <h5>{{$item->title}}</h5>
+                                <p>{{$item->description}}</p>
+                            </div>
+                        </a>
                     </div>
                 @endif
                 @php
@@ -65,7 +71,8 @@
             </div>
             <div class="col-md-4  wow fadeInRight">
                 <div class="register">
-                    <div class="bg-img" style="background-image:url({{URL::to('images/common/du-hoc-ireland-co-hoi-hoc-bong-hap-dan-danh-rieng-cho-sinh-vien-viet-nam.jpg')}});"></div>
+                    <div class="bg-img"
+                         style="background-image:url({{URL::to('images/common/du-hoc-ireland-co-hoi-hoc-bong-hap-dan-danh-rieng-cho-sinh-vien-viet-nam.jpg')}});"></div>
                     <div class="content">
                         <h4>@lang('content.home_contact_title')</h4>
                         <div class="ip-name input-group" style="display: block">

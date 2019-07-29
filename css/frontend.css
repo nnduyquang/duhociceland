@@ -897,14 +897,58 @@ This class is added to the container
   position: absolute;
   z-index: 100;
   top: 20%;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
-  color: #529c4d;
-  text-transform: uppercase;
-  font-weight: bolder;
-  font-size: 18px;
-  -webkit-animation: blinker 2.5s linear infinite;
-          animation: blinker 2.5s linear infinite;
+  padding: .5em 2em;
+  font-size: 30px;
+  border-radius: 1em;
+  border: 0px;
+  color: whitesmoke;
+  background: #D31027;
+  background: -webkit-gradient(linear, left top, right top, from(#529c4d), to(#78bc4d));
+  background: linear-gradient(to right, #529c4d, #78bc4d);
+  -webkit-animation: shake 1s ease-in infinite;
+          animation: shake 1s ease-in infinite;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate(0.8em);
+            transform: translate(0.8em);
+    -webkit-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+  }
+  10%, 30%, 50% {
+    -webkit-transform: translate(-0.2em);
+            transform: translate(-0.2em);
+  }
+  70%, 100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate(0.8em);
+            transform: translate(0.8em);
+    -webkit-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+  }
+  10%, 30%, 50% {
+    -webkit-transform: translate(-0.2em);
+            transform: translate(-0.2em);
+  }
+  70%, 100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
 }
 
 @-webkit-keyframes blinker {
@@ -991,6 +1035,15 @@ This class is added to the container
   font-size: 30px;
 }
 
+@media (max-width: 575.98px) {
+  #slider2 .blink_text {
+    padding: .3em .7em;
+    font-size: 20px;
+    bottom: 20%;
+    top: auto;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   #slider2 .img-content .test-slide h5 {
     font-size: 22px;
@@ -1069,6 +1122,10 @@ This class is added to the container
 
 #h_1 #top .box.middle h5 {
   font-size: 30px;
+  color: black;
+}
+
+#h_1 #top .box.middle p {
   color: black;
 }
 
