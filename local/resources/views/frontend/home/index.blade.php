@@ -9,10 +9,10 @@
 
 @stop
 @section('url-og')
-
+    http://www.irelandos.com
 @stop
 @section('image-og')
-
+    http://www.irelandos.com/images/slider/slide_1.jpg
 @stop
 @section('styles')
     {{ Html::style('css/themes/default/default.css') }}

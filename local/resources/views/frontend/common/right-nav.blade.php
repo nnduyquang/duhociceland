@@ -35,7 +35,7 @@ margin-bottom: 1px;
     <ul>
         <li><i class="fas fa-phone call-us-desk" style="background-color:red;"></i></li>
         <li><a href=""><i class="far fa-envelope" style="background-color:green;"></i></a></li>
-        <li><a href=""><i class="fab fa-facebook-f" style="background-color:#002752;"></i></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/irelandos"><i class="fab fa-facebook-f" style="background-color:#002752;"></i></a></li>
         <li><a href=""><i class="fab fa-twitter" style="background-color:#007bff;"></i></a></li>
         <li><a href=""><i class="fab fa-google-plus-g" style="background-color:darkred;"></i></a></li>
     </ul>

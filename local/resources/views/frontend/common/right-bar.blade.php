@@ -15,7 +15,7 @@
         <div class="mt-3">
             <div class="sc-nw mb-3 d-flex align-items-center" style="background-color:#0367ae;">
                 <i class="fab fa-facebook-f" style="background-color:#0367ae;"></i>
-                <a href=""><span>Connect with us On Facebook</span></a>
+                <a target="_blank" href="https://www.facebook.com/irelandos"><span>Connect with us On Facebook</span></a>
             </div>
             <div class="sc-nw mb-3 d-flex align-items-center" style="background-color:#0062cc;">
                 <i class="fab fa-twitter" style="background-color:#0062cc;"></i>

@@ -23,9 +23,9 @@
             <div class="col-md-3 text-center mb-lg-0 mb-2">
                 <div class="info">
                     <div>
-                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                        <a href=""><i class="fab fa-twitter"></i></a>
-                        <a href=""><i class="fab fa-google-plus-g"></i></a>
+                        <a target="_blank" href="http://www.facebook.com/irelandos"><i class="fab fa-facebook-f"></i></a>
+                        {{--<a href=""><i class="fab fa-twitter"></i></a>--}}
+                        {{--<a href=""><i class="fab fa-google-plus-g"></i></a>--}}
                     </div>
                     <p>Social Network</p>
 

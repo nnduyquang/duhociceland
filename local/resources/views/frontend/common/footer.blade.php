@@ -58,7 +58,7 @@
                                          style="background-image:url({{URL::to($item->image)}});">
 
                                     </div>
-                                    <a href="">{{$item->title}}</a>
+                                    <a href="{{URL::to('services/'.$item->path)}}">{{$item->title}}</a>
                                 </div>
                             </li>
 
