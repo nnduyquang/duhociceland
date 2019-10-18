@@ -1,9 +1,9 @@
 @extends('frontend.master')
 @section('title')
-    DU HOC ICELAND
+    {{$data['postBlog']->title}}
 @stop
 @section('description')
-    DU HOC ICELAND
+    DU HOC IRELAND
 @stop
 @section('keyword')
 
@@ -12,7 +12,7 @@
 
 @stop
 @section('image-og')
-
+    {{URL::to($data['postBlog']->image)}}
 @stop
 @section('styles')
     {{ Html::style('css/themes/default/default.css') }}
